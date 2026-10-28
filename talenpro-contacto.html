@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Premium | Cotizar Capacitación Corporativa | TALENPRO</title>
+    <meta name="description" content="Inicie la transformación de su organización. Póngase en contacto con los consultores de TALENPRO para diseñar un programa a la medida de su equipo.">
+    <meta name="keywords" content="contacto talenpro, contratar capacitacion empresas, telefono grupo xeer, correo info grupoxeer">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inicie Su Transformación Empresarial | Contacto TALENPRO">
+    <meta property="og:description" content="Solicite una consultoría personalizada para su organización. Comuníquese directamente a nuestros canales oficiales en Costa Rica.">
+    <meta property="og:image" content="https://grupoxeer.com">
+    <meta property="og:url" content="https://grupoxeer.com">
+    <link rel="icon" type="image/png" href="img/logo-talenpro.PNG">
+    <link rel="stylesheet" href="css/talenpro-general.css">
+    <link rel="stylesheet" href="css/talenpro-contacto.css">
+    <link rel="stylesheet" href="css/gracias.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-nav">
+            <img src="img/logo-talenpro.PNG" alt="TALENPRO">
+        </div>
+
+    
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-icono-hamburguesa">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </label>
+
+    
+        <div class="menu-nav">
+            <a href="index.html">Holding</a>
+            <a href="talenpro-index.html">QUIÉNES SOMOS</a>
+            <a href="talenpro-servicios.html">SERVICIOS</a>
+            <a href="talenpro-contacto.html" class="active">CONTACTO</a>
+        </div>
+    </nav>
+
+    <main class="contenedor-contacto">
+        <!-- FORMULARIO LIMPIO -->
+        <section class="tarjeta-formulario">
+            <h2>Inicie Su Transformación</h2>
+            <p>Escríbanos y diseñaremos una propuesta a la medida de su organización.</p>
+            
+            <!-- Formulario para enviar correos reales por formsubmit-->
+            <form action="https://formsubmit.co/info@grupoxeer.com" method="POST">
+    
+                <!-- Configuración interna de FormSubmit -->
+                <input type="hidden" name="_next" value="#modal-exito">
+                <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web TALENPRO">
+                <input type="hidden" name="_captcha" value="false">
+
+                <input type="text" name="nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="correo" placeholder="Correo Corporativo" required>
+                <input type="tel" name="telefono" placeholder="Teléfono de Contacto" required>
+                <textarea name="mensaje" placeholder="Detalle las necesidades de capacitación..." rows="5" required></textarea>
+                
+                <button type="submit" class="btn-enviar">Solicitar Consultoría</button>
+
+                <a href="#modal-exito" style="display: inline-block; margin-top: 15px; color: #C39A3C; font-weight: bold; text-decoration: underline;">
+                [PROBAR APERTURA DE MODAL]</a>
+                
+            </form>
+
+        </section>
+
+        
+        <section class="informacion-directa">
+            <h2>Canales Oficiales</h2>
+            <div class="bloque-dato">
+                <h5>Teléfono Directo</h5>
+                <p>6275-0594</p>
+                <p>6217-6297</p>
+            </div>
+            <div class="bloque-dato">
+                <h5>Correo de Enlace</h5>
+                <p>info@grupoxeer.com</p>
+            </div>
+            <div class="bloque-dato">
+                <h5>Sede Central</h5>
+                <p>Alajuela, Costa Rica</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL DE CRISTAL -->
+    <div id="modal-exito" class="capa-modal-fondo">
+    
+        <a href="#" class="cerrar-fuera-overlay"></a>
+    
+    <!-- La ventana con el mensaje -->
+        <div class="ventana-modal-contenido">
+            <a href="#" class="btn-cerrar-modal">&times;</a>
+            <div class="icono-exito-modal check-dorado"></div>
+                <h2>¡Solicitud Recibida!</h2>
+                <p class="subtitulo-modal">Su mensaje ha sido procesado con la máxima confidencialidad.</p>
+            <div class="linea-dorada-modal"></div>
+            <p class="descripcion-modal">Un consultor especializado de TALENPRO analizará los requerimientos de su organización y se comunicará en un plazo máximo de 24 horas hábiles.</p>
+            <a href="#" class="btn-entendido">Entendido</a>
+            </div>
+        </div>
+
+    <footer class="footer-luxe">
+        <p>&copy; 2026 TALENPRO | Conectados con su Desarrollo.</p>
+        <p>Grupo Xeer Empresarial</p>
+    </footer>
+
+    
+</body>
+</html>

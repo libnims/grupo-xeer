@@ -1,0 +1,131 @@
+.seccion-cabecera-programa {
+    position: relative;
+    padding: 60px 8%;
+    background-color: var(--azul-oxford);
+    overflow: hidden;
+    background-image: linear-gradient(rgba(28, 64, 105, 0.85), rgba(0, 7, 18, 0.9)), url('../img/mujeres-empresarias.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contenido-cabecera { 
+    position: relative; 
+    z-index: 10; 
+}
+
+.duracion-global { 
+    font-size: 0.75rem; 
+    color: var(--oro-brillante); 
+    font-weight: 700; 
+    letter-spacing: 3px; 
+}
+
+.seccion-cabecera-programa h2 { 
+    font-size: 1.8rem; 
+    color: var(--blanco-puro); 
+    font-weight: 800; 
+    letter-spacing: 1px; 
+    margin-top: 5px; 
+}
+
+.seccion-cabecera-programa-proyecta {
+    position: relative;
+    padding: 60px 8%;
+    background-color: var(--azul-oxford);
+    overflow: hidden;
+    background-image: linear-gradient(rgba(28, 64, 105, 0.85), rgba(0, 7, 18, 0.9)), url('../img/proyecta-t.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.seccion-cabecera-programa-mentes {
+    position: relative;
+    padding: 60px 8%;
+    background-color: var(--azul-oxford);
+    overflow: hidden;
+    background-image: linear-gradient(rgba(28, 64, 105, 0.85), rgba(0, 7, 18, 0.9)), url('../img/mentes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CATÁLOGO DE TARJETAS 3D CON DESTELLO DE ORO LÍQUIDO */
+.grid-catalogo-programas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 8%;
+    background-color: var(--azul-oxford) !important;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 20, 43, 0.85), rgba(0, 7, 18, 0.9)), url('../img/fondo-mujeres.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.tarjeta-programa-wow {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--borde-cristal);
+    padding: 35px 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.tarjeta-programa-wow:hover {
+    transform: translateY(-5px) scale3d(1.03, 1.03, 1.03) rotateY(-3deg) rotateX(2deg);
+    border-color: var(--oro-viejo);
+    box-shadow: 0 15px 30px rgba(179, 146, 71, 0.15);
+}
+
+.tarjeta-programa-wow .destello-liquido {
+    position: absolute; 
+    top: 0; 
+    left: -150%; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(234, 209, 131, 0.1) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-30deg); 
+    z-index: 2;
+}
+
+.tarjeta-programa-wow:hover .destello-liquido { 
+    animation: pasarLuz 0.8s ease forwards; 
+}
+
+@keyframes pasarLuz { 
+    0% { 
+        left: -150%; 
+    } 
+    100% { 
+        left: 150%; 
+    } 
+}
+
+.tarjeta-programa-wow h4 { 
+    color: var(--blanco-puro); 
+    font-size: 1.15rem; 
+    margin-bottom: 10px; 
+    font-weight: 700; 
+    letter-spacing: 0.5px; 
+}
+
+.tarjeta-programa-wow p { 
+    color: #A0AEC0; 
+    font-size: 0.9rem; 
+    line-height: 1.6; 
+}
+
+@media (max-width: 768px) {
+    .seccion-cabecera-programa h2 { 
+        font-size: 1.3rem; 
+    }
+    .grid-catalogo-programas { 
+        padding: 30px 5%; 
+    }
+}

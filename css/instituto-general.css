@@ -1,0 +1,611 @@
+/* =========================================================
+   INSTITUTO PROFESIONAL BEITH SHALOM
+   instituto-general.css
+   Variables raíz y estilos generales reutilizables en
+   cualquier página del sitio (no solo el landing).
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. Fuentes
+   --------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---------------------------------------------------------
+   2. Variables raíz
+   --------------------------------------------------------- */
+:root {
+  /* Colores de marca */
+  --color-turquesa: #49c5c1;
+  --color-turquesa-oscuro: #2e9e9b;
+  --color-turquesa-suave: #e3f6f5;
+  --color-blanco: #ffffff;
+  --color-carbon: #333333;
+  --color-carbon-suave: #5c5c5c;
+  --color-dorado: #b8935a;
+  --color-hielo: #f7f9f9;
+  --color-borde: #e2e8e7;
+  --color-error: #c0392b;
+  --color-exito: #2e7d5b;
+
+  /* Tipografía */
+  --fuente-titular: 'Cormorant Garamond', 'Georgia', serif;
+  --fuente-cuerpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --tamano-h1: clamp(2.75rem, 5vw, 4.5rem);
+  --tamano-h2: clamp(2rem, 3.5vw, 3rem);
+  --tamano-h3: clamp(1.35rem, 2vw, 1.75rem);
+  --tamano-cuerpo: 1rem;
+  --tamano-pequeno: 0.875rem;
+
+  /* Espaciado */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 2.5rem;
+  --espacio-xl: 4rem;
+  --espacio-xxl: 6rem;
+
+  /* Layout */
+  --ancho-maximo: 1200px;
+  --radio-borde: 18px;
+  --radio-borde-chico: 10px;
+  --sombra-suave: 0 10px 30px rgba(51, 51, 51, 0.08);
+  --sombra-media: 0 16px 40px rgba(51, 51, 51, 0.14);
+
+  /* Transiciones */
+  --transicion-rapida: 180ms ease;
+  --transicion-media: 320ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Altura del navbar, usada para el scroll-margin de las secciones */
+  --alto-navbar: 84px;
+}
+
+/* ---------------------------------------------------------
+   3. Reset
+   --------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background-color: var(--color-blanco);
+  color: var(--color-carbon);
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--tamano-cuerpo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Respeta la preferencia del usuario de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   4. Foco de teclado visible (accesibilidad)
+   --------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-dorado);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------
+   5. Tipografía general
+   --------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--fuente-titular);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-carbon);
+}
+
+p {
+  margin: 0;
+  max-width: 65ch;
+}
+
+.texto-italica {
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------
+   6. Contenedor y utilidades de layout
+   --------------------------------------------------------- */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: var(--espacio-md);
+}
+
+.seccion {
+  padding-block: var(--espacio-xxl);
+  scroll-margin-top: var(--alto-navbar);
+}
+
+.seccion--turquesa {
+  background-color: var(--color-turquesa);
+  color: var(--color-blanco);
+}
+
+.seccion--hielo {
+  background-color: var(--color-hielo);
+}
+
+.seccion-encabezado {
+  max-width: 640px;
+  margin-bottom: var(--espacio-lg);
+}
+
+.seccion-encabezado--centrado {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.titular-seccion {
+  font-size: var(--tamano-h2);
+  font-style: italic;
+}
+
+.grid-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-md);
+  justify-content: center;
+}
+
+/* Si queda una sola tarjeta huérfana en la última fila, se centra
+   gracias a flex-wrap + justify-content: center del contenedor. */
+.grid-tarjetas > * {
+  flex: 1 1 300px;
+  max-width: 380px;
+}
+
+/* ---------------------------------------------------------
+   7. Botones
+   --------------------------------------------------------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-family: var(--fuente-cuerpo);
+  font-weight: 600;
+  font-size: var(--tamano-pequeno);
+  white-space: nowrap;
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida), background-color var(--transicion-rapida);
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--primario {
+  background-color: var(--color-turquesa);
+  color: var(--color-blanco);
+  box-shadow: var(--sombra-suave);
+}
+
+.boton--primario:hover {
+  background-color: var(--color-turquesa-oscuro);
+}
+
+.boton--sobre-turquesa {
+  background-color: var(--color-blanco);
+  color: var(--color-turquesa-oscuro);
+}
+
+.boton--sobre-turquesa:hover {
+  background-color: var(--color-hielo);
+}
+
+.boton--fantasma {
+  background-color: transparent;
+  border: 1.5px solid var(--color-carbon);
+  color: var(--color-carbon);
+}
+
+.boton--fantasma:hover {
+  background-color: var(--color-carbon);
+  color: var(--color-blanco);
+}
+
+.boton--texto {
+  padding: 0;
+  border-radius: 0;
+  color: var(--color-turquesa-oscuro);
+  font-weight: 600;
+}
+
+.boton--texto:hover {
+  text-decoration: underline;
+}
+
+.boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------------------------------------------------------
+   8. Tarjeta con efecto "vidrio líquido"
+   --------------------------------------------------------- */
+.tarjeta {
+  position: relative;
+  padding: var(--espacio-lg) var(--espacio-md);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion-media), box-shadow var(--transicion-media), background var(--transicion-media);
+}
+
+.tarjeta:hover,
+.tarjeta:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-media);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.tarjeta__titulo {
+  font-size: var(--tamano-h3);
+  margin-bottom: var(--espacio-xs);
+  color: var(--color-turquesa-oscuro);
+}
+
+.tarjeta__texto {
+  color: var(--color-carbon-suave);
+  font-size: 0.95rem;
+  margin-bottom: var(--espacio-md);
+}
+
+/* ---------------------------------------------------------
+   9. Revelado al hacer scroll
+   --------------------------------------------------------- */
+[data-revelar] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+[data-revelar].revelado {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-revelar] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   10. Modales (base, reutilizable)
+   --------------------------------------------------------- */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(51, 51, 51, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacio-md);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transicion-media);
+}
+
+.modal-fondo.abierto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-lg);
+  transform: translateY(16px) scale(0.98);
+  transition: transform var(--transicion-media);
+}
+
+.modal-fondo.abierto .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal__cerrar {
+  position: absolute;
+  top: var(--espacio-sm);
+  right: var(--espacio-sm);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-hielo);
+  color: var(--color-carbon);
+  font-size: 1.1rem;
+}
+
+.modal__cerrar:hover {
+  background: var(--color-turquesa-suave);
+}
+
+.modal__cerrar-pie {
+  display: block;
+  margin: var(--espacio-lg) auto 0;
+}
+
+/* ---------------------------------------------------------
+   11. Formularios
+   --------------------------------------------------------- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--espacio-md);
+}
+
+.campo label {
+  font-size: var(--tamano-pequeno);
+  font-weight: 600;
+  color: var(--color-carbon);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-borde);
+  border-radius: var(--radio-borde-chico);
+  color: var(--color-carbon);
+  background: var(--color-blanco);
+  transition: border-color var(--transicion-rapida);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--color-turquesa);
+}
+
+.campo-ayuda {
+  font-size: 0.8rem;
+  color: var(--color-carbon-suave);
+}
+
+.campo-error {
+  font-size: 0.8rem;
+  color: var(--color-error);
+}
+
+.mensaje-alerta {
+  padding: var(--espacio-sm) var(--espacio-md);
+  border-radius: var(--radio-borde-chico);
+  font-size: var(--tamano-pequeno);
+  margin-bottom: var(--espacio-md);
+}
+
+.mensaje-alerta--error {
+  background: #fdecea;
+  color: var(--color-error);
+}
+
+.mensaje-alerta--exito {
+  background: #e8f5ee;
+  color: var(--color-exito);
+}
+
+/* ---------------------------------------------------------
+   12. Estado de envío (spinner → check / X), reutilizable
+   --------------------------------------------------------- */
+.estado-envio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--espacio-md);
+  padding-block: var(--espacio-md);
+}
+
+.estado-envio__icono {
+  width: 72px;
+  height: 72px;
+}
+
+.estado-envio__spinner {
+  border-radius: 50%;
+  border: 4px solid var(--color-turquesa-suave);
+  border-top-color: var(--color-turquesa);
+  animation: girar-spinner 800ms linear infinite;
+}
+
+@keyframes girar-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.estado-envio__circulo {
+  fill: none;
+  stroke-width: 4;
+}
+
+.estado-envio__circulo--exito {
+  stroke: var(--color-exito);
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: dibujar-circulo 500ms ease forwards;
+}
+
+.estado-envio__marca-exito {
+  stroke: var(--color-exito);
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: dibujar-marca 350ms ease 450ms forwards;
+}
+
+.estado-envio__circulo--error {
+  stroke: var(--color-error);
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: dibujar-circulo 500ms ease forwards;
+}
+
+.estado-envio__marca-error {
+  stroke: var(--color-error);
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: dibujar-marca 350ms ease 450ms forwards;
+}
+
+@keyframes dibujar-circulo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dibujar-marca {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .estado-envio__spinner {
+    animation: none;
+    border-top-color: var(--color-turquesa-suave);
+  }
+  .estado-envio__circulo--exito,
+  .estado-envio__circulo--error,
+  .estado-envio__marca-exito,
+  .estado-envio__marca-error {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.estado-envio__titulo {
+  font-family: var(--fuente-titular);
+  font-size: var(--tamano-h3);
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------
+   13. Galería de fotos (modal de eventos)
+   --------------------------------------------------------- */
+.galeria-fotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.6rem;
+  margin-top: var(--espacio-md);
+}
+
+.galeria-fotos img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--radio-borde-chico);
+}
+
+/* ---------------------------------------------------------
+   14. Utilidades de accesibilidad
+   --------------------------------------------------------- */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.enlace-saltar {
+  position: absolute;
+  left: var(--espacio-sm);
+  top: -60px;
+  background: var(--color-carbon);
+  color: var(--color-blanco);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radio-borde-chico);
+  z-index: 2000;
+  transition: top var(--transicion-rapida);
+}
+
+.enlace-saltar:focus {
+  top: var(--espacio-sm);
+}

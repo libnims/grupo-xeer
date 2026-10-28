@@ -1,0 +1,391 @@
+/* HERO VIDEO INTERACTION */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    overflow: hidden;
+}
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(11, 19, 43, 0.92) 0%, rgba(28, 37, 65, 0.82) 100%);
+    z-index: 2;
+}
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 850px;
+}
+.hero-content h1 {
+    font-family: var(--font-titles);
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+.hero-buttons .btn { margin: 0 0.6rem; }
+
+/* SECCIONES: RETOS Y TARJETAS DE SERVICIOS */
+.grid-retos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.reto-card {
+    background-color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+    border-top: 3px solid transparent;
+    transition: var(--transition-smooth);
+}
+.reto-card i { 
+    font-size: 2.6rem; 
+    color: var(--accent-gold); 
+    margin-bottom: 1.5rem; 
+}
+.reto-card h3 { 
+    font-family: var(--font-titles); 
+    font-size: 1.35rem; margin-bottom: 1rem; 
+    color: var(--primary-blue); 
+}
+.reto-card p { 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+}
+.reto-card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06); 
+    border-top-color: var(--primary-blue); 
+}
+
+/* Misión y Valores */
+.identidad {
+    background-color: var(--white);
+    position: relative;
+}
+
+.grid-identidad-premium {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 6rem;
+    align-items: center; 
+}
+
+@media (max-width: 992px) {
+    .grid-identidad-premium {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+}
+
+
+.eyebrow {
+    font-family: var(--font-titles);
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+
+.mision-statement {
+    font-family: var(--font-titles);
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+    text-align: justify;
+}
+
+.mision-statement .highlight-gold {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+
+
+@media (max-width: 768px) {
+    .mision-statement { font-size: 1.7rem; }
+}
+
+
+.lista-valores-lineal {
+    display: flex;
+    flex-direction: column;
+}
+
+.valor-linea {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(28, 37, 65, 0.1); 
+    transition: var(--transition-smooth);
+}
+
+.valor-linea:last-child {
+    border-bottom: none; 
+}
+
+
+.val-num {
+    font-family: var(--font-titles);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-right: 2rem;
+    padding-top: 0.2rem;
+    transition: var(--transition-smooth);
+}
+
+.val-content h4 {
+    font-family: var(--font-titles);
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    transition: var(--transition-smooth);
+}
+
+.val-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+
+.valor-linea:hover {
+    border-bottom-color: var(--accent-gold);
+    padding-left: 0.5rem; 
+}
+.valor-linea:hover .val-num {
+    color: var(--accent-gold);
+}
+.valor-linea:hover .val-content h4 {
+    color: var(--accent-gold);
+}
+
+.servicios { 
+    background-color: var(--light-bg); 
+}
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-auto-rows: 1fr; 
+    gap: 2.5rem;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 3.5rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.01);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    display: flex;             
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+    transition: var(--transition-smooth);
+    color: var(--primary-blue) !important; /
+}
+
+
+.service-icon svg { 
+    width: 50px !important;    
+    height: 50px !important;
+    display: block !important; 
+    fill: var(--primary-blue) !important; 
+    transition: var(--transition-smooth);
+}
+
+
+.service-icon i {
+    font-size: 2rem !important;
+    color: var(--primary-blue) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.service-card h3 { 
+    font-family: var(--font-titles); 
+    font-size: 1.45rem; 
+    color: var(--primary-blue); 
+    margin-bottom: 1rem; 
+}
+.service-card p { 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+    margin-bottom: 1.8rem; 
+}
+
+.service-link {
+    margin-top: auto; 
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-family: var(--font-titles);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.service-link i { 
+    margin-left: 6px; 
+    font-size: 1.3rem; 
+    transition: var(--transition-smooth); 
+}
+
+.service-card:hover { 
+    background-color: var(--primary-blue); 
+}
+
+.service-card:hover h3, 
+.service-card:hover p, 
+.service-card:hover .service-link { 
+    color: var(--white); 
+}
+
+/* Al pasar el mouse, el fondo del contenedor del icono se vuelve traslúcido */
+.service-card:hover .service-icon { 
+    background-color: rgba(255,255,255,0.1); 
+}
+
+
+.service-card:hover .service-icon i { 
+    color: var(--accent-gold) !important; 
+}
+
+.service-card:hover .service-icon svg { 
+    fill: var(--accent-gold) !important; 
+}
+
+.service-card:hover .service-link i { 
+    transform: translateX(6px); 
+    color: var(--accent-gold); 
+}
+
+/* FRANJA DE ESTADÍSTICAS */
+.stats { 
+    background-color: var(--secondary-blue); 
+    padding: 4.5rem 0; 
+    color: var(--white); 
+}
+.grid-stats { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 2.5rem; 
+    text-align: center; 
+}
+.stat-item h3, .stat-percent { 
+    font-family: var(--font-titles); 
+    font-size: 3.2rem; font-weight: 700; 
+    color: var(--accent-gold); 
+    margin-bottom: 0.5rem; 
+}
+.stat-item p { 
+    font-size: 0.95rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: rgba(255,255,255,0.7); 
+}
+
+/* FORMULARIO HOME CON ENFOQUE MINIMALISTA */
+.grid-contact { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 5rem; 
+    align-items: center; 
+}
+.info-meta p { 
+    margin-bottom: 1.4rem; 
+    -size: 1.05rem; 
+}
+.info-meta i { 
+    color: var(--accent-gold); 
+    font-size: 1.4rem; 
+    margin-right: 12px; 
+    vertical-align: middle; 
+}
+.minimal-form .form-group { 
+    position: relative; 
+    margin-bottom: 2.2rem; 
+}
+.minimal-form input, .minimal-form textarea {
+    width: 100%; 
+    padding: 0.8rem 0.5rem; 
+    border: none; 
+    border-bottom: 1px solid #CCC; 
+    background: transparent; 
+    outline: none; 
+    font-family: var(--font-body); 
+    font-size: 1rem; 
+    transition: var(--transition-smooth);
+}
+.minimal-form label { 
+    position: absolute; 
+    top: 50%; 
+    left: 0.5rem; 
+    transform: translateY(-50%); 
+    color: var(--text-muted); 
+    transition: var(--transition-smooth); 
+    pointer-events: none; 
+}
+.minimal-form textarea ~ label { 
+    top: 1.5rem; 
+    transform: none; 
+}
+
+.minimal-form input:focus ~ label,
+.minimal-form input:not(:placeholder-shown) ~ label,
+.minimal-form textarea:focus ~ label,
+.minimal-form textarea:not(:placeholder-shown) ~ label {
+    top: -10px; 
+    font-size: 0.8rem; 
+    color: var(--accent-gold); 
+    font-weight: 600;
+}
+.minimal-form input:focus, .minimal-form textarea:focus { 
+    border-bottom-color: var(--accent-gold); 
+}
+

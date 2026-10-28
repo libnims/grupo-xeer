@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Store - Cosmética Holística Premium</title>
+    <!-- Hojas de estilo externas e independientes -->
+    <link rel="stylesheet" href="css/store-general.css">
+    <link rel="stylesheet" href="css/store-index.css">
+</head>
+<body>
+
+    <!-- NAVBAR TIENDA  -->
+    <nav class="spa-navbar">
+        <div class="nav-container">
+            <a href="store-index.html" class="nav-logo">WELLNESS <span>STORE</span></a>
+            <ul class="nav-menu">
+                <li><a href="xeer-wellness-group-index.html" data-es="Inicio Tienda" data-en="Store Home">Xeer Wellness Group</a></li>
+                <li><a href="store-index.html" data-es="Inicio Tienda" data-en="Store Home">Inicio Tienda</a></li>
+                <li><a href="#seccion-ahava" data-es="Línea AHAVA" data-en="AHAVA Line">Línea AHAVA</a></li>
+                <li><a href="#seccion-bionoah" data-es="Línea BioNoah" data-en="BioNoah Line">Línea BioNoah</a></li>
+                <!-- Ícono del Carrito con su burbuja de conteo numérico real -->
+                <li class="nav-cart-wrapper">
+                    <button id="nav-cart-trigger" class="nav-cart-btn" aria-label="Ver Carrito">
+                        <svg viewBox="0 0 24 24" class="cart-svg-icon">
+                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                        <span id="cart-global-counter" class="cart-badge-number">0</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="lang-selector">
+                <button id="btn-es" class="lang-btn active">ES</button>
+                <span class="lang-divider">|</span>
+                <button id="btn-en" class="lang-btn">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO EXCLUSIVO DE LA BOUTIQUE -->
+    <header class="store-hero">
+        
+            <video autoplay muted loop playsinline class="store-hero-video">
+                <source src="videos/store.mp4" type="video/mp4">
+            </video>
+            <div class="store-hero-overlay"></div>
+        
+        <div class="store-hero-content scroll-reveal">
+            <h1 data-es="Cosmética Consciente e Integral" data-en="Conscious & Holistic Skincare">Cosmética Consciente e Integral</h1>
+            <p data-es="Alta belleza, salud y fórmulas orgánicas utilizadas en nuestros santuarios de bienestar." data-en="High beauty, health, and organic formulas trusted inside our wellness sanctuaries.">Alta belleza, salud y fórmulas orgánicas utilizadas en nuestros santuarios de bienestar.</p>
+            <a href="#seccion-ahava" class="btn-primary-store" data-es="Explorar Boutique" data-en="Explore Boutique">Explorar Boutique</a>
+        </div>
+    </header>
+
+    <!-- FILTROS Y BUSCADOR INTELIGENTE EN TIEMPO REAL -->
+    <section class="filter-controls-section">
+        <div class="container filter-container scroll-reveal">
+            <div class="filter-categories-buttons">
+                <button class="filter-btn active" data-filter="all" data-es="Ver Todo" data-en="All Products">Ver Todo</button>
+                <button class="filter-btn" data-filter="ahava-teen" data-es="AHAVA Teen" data-en="AHAVA Teen">AHAVA Teen</button>
+                <button class="filter-btn" data-filter="ahava-classic" data-es="AHAVA Natural" data-en="AHAVA Natural">AHAVA Natural</button>
+                <button class="filter-btn" data-filter="ahava-men" data-es="AHAVA para Hombres" data-en="AHAVA for Men">AHAVA para Hombres</button>
+                <button class="filter-btn" data-filter="face-mask" data-es="AHAVA Mascarillas" data-en="AHAVA Face Mask">AHAVA Mascarillas</button>
+                <button class="filter-btn" data-filter="bionoah-collagen" data-es="BioNoah Colágeno" data-en="BioNoah Collagen">BioNoah Colágeno</button>
+                <button class="filter-btn" data-filter="bionoah-trufa" data-es="BioNoah Trufa" data-en="BioNoah Truffle">BioNoah Trufa</button>
+                <button class="filter-btn" data-filter="bionoah-uchuva" data-es="BioNoah Uchuva" data-en="BioNoah Uchuva">BioNoah Uchuva</button>
+                <button class="filter-btn" data-filter="bionoah-bakuchiol" data-es="BioNoah Bakuchiol" data-en="BioNoah Bakuchiol">BioNoah Bakuchiol</button>
+                <button class="filter-btn" data-filter="bionoah-kojico-glicolico" data-es="BioNoah Kójico & Glicólico" data-en="BioNoah Kojic & Glycolic">Kójico & Glicólico</button> 
+                
+            </div>
+            <div class="search-bar-wrapper">
+                <input type="text" id="store-search-input" placeholder="Buscar producto..." data-placeholder-es="Buscar producto..." data-placeholder-en="Search product...">
+                <button id="store-search-submit" class="search-lupa-btn" aria-label="Buscar">
+                    <svg viewBox="0 0 24 24" class="lupa-icon">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PASILLO VISUAL DE MARCA 1: SECCIÓN AHAVA -->
+    <section id="seccion-ahava" class="brand-section-pasillo section-ahava-theme section-padding">
+        <div class="container">
+            <div class="brand-pasillo-header scroll-reveal">
+                <span class="pasillo-mini-tag">AHAVA HOLÍSTICA BELLEZA Y SALUD</span>
+                <h2 class="serif-title">Línea Orgánica AHAVA</h2>
+                <p class="section-subtitle" data-es="Fórmulas naturales libres de parabenos y aceites minerales, diseñadas para el equilibrio del pH y el cuidado consciente de la piel." data-en="Natural formulas free of parabens and mineral oils, designed for pH balance and conscious skincare.">Fórmulas naturales libres de parabenos y aceites minerales, diseñadas para el equilibrio del pH y el cuidado consciente de la piel.</p>
+            </div>
+            
+            <div class="products-grid container-top">
+                <!-- Tarjeta 1: Avena & Fresas Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="limpiador facial avena fresas piel seca ahava">
+                    <div class="product-card-badge" data-es="Ideal Piel Seca" data-en="Ideal Dry Skin">Ideal Piel Seca</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-avena-y-fresas.png" alt="Limpiador Facial Avena & Fresas Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Avena & Fresas" data-en="Oatmeal & Strawberry Facial Cleanser">Limpiador Facial Avena & Fresas</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-avena-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- Tarjeta 2: Avena & Fresas Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="tonico facial avena fresas piel seca ahava">
+                    <div class="product-card-badge" data-es="Ideal Piel Seca" data-en="Ideal Dry Skin">Ideal Piel Seca</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-tonico-avena-y-fresas-principal.png" alt="Tónico Facial Avena & Fresas Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Tónico Facial Avena & Fresas" data-en="Oatmeal & Strawberry Facial Toner">Tónico Facial Avena & Fresas</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-avena-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Menta & Piperita Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="limpiador facial menta piperita piel grasa ahava">
+                    <div class="product-card-badge" data-es="Ideal Piel Grasa" data-en="Ideal Oily Skin">Ideal Piel Grasa</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-limpiador-menta-y-piperita-principal.png" alt="Limpiador Facial Menta & Piperita Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Menta & Piperita" data-en="Mint & Peppermint Facial Cleanser">Limpiador Facial Menta & Piperita</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$36.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-menta-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 4: Menta & Piperita Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="tonico facial menta piperita piel grasa ahava">
+                    <div class="product-card-badge" data-es="Ideal Piel Grasa" data-en="Ideal Oily Skin">Ideal Piel Grasa</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-tonico-menta-y-peperita-principal.png" alt="Tónico Facial Menta & Piperita Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Tónico Facial Menta & Piperita" data-en="Mint & Peppermint Facial Toner">Tónico Facial Menta & Piperita</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$36.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-menta-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 5: Melón & Romero Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="limpiador facial melon romero piel acneica ahava">
+                    <div class="product-card-badge" data-es="Piel Acneica" data-en="Acne-Prone Skin">Piel Acneica</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-limpiador-melon-romero-principal.png" alt="Limpiador Melón & Romero Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Melón & Romero" data-en="Melon & Rosemary Facial Cleanser">Limpiador Facial Melón & Romero</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-melon-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6: Melón & Romero Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="tonico facial melon romero piel acneica ahava">
+                    <div class="product-card-badge" data-es="Piel Acneica" data-en="Acne-Prone Skin">Piel Acneica</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-tonico-melon-romero-principal.png" alt="Tónico Melón & Romero Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Melón & Romero" data-en="Melon & Rosemary Facial Toner">Tónico Facial Melón & Romero</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-melon-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 7: Jazmin Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="limpiador facial jazmin piel mixta ahava">
+                    <div class="product-card-badge" data-es="Piel Mixta" data-en="Combination Skin">Piel Mixta</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-limpiador-jazmin-principal.png" alt="Limpiador Jazmin Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Jazmín" data-en="Jasmine Facial Cleanser">Limpiador Facial Jazmín</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-jazmin-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 8: Jazmin Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="tonico facial jazmin piel mixta ahava">
+                    <div class="product-card-badge" data-es="Piel Mixta" data-en="Combination Skin">Piel Mixta</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-tonico-jazmin-principal.png" alt="Tónico Jazmin Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Tónico Facial Jazmín" data-en="Jasmine Facial Toner">Tónico Facial Jazmín</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-jazmin-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 9: Caléndula Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="limpiador facial calendula piel rosacea ahava">
+                    <div class="product-card-badge" data-es="Piel con Rosácea" data-en="Rosacea-prone Skin">Piel con Rosácea</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-limpiador-calendula-principal.png" alt="Limpiador Caléndula Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Caléndula" data-en="Calendula Facial Cleanser">Limpiador Facial Caléndula</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-calendula-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 10: Caléndula Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="tonico facial calendula piel rosácea ahava">
+                    <div class="product-card-badge" data-es="Piel con Rosácea" data-en="Rosacea-prone Skin">Piel con Rosácea</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-tonico-calendula-principal.png" alt="Tónico Caléndula Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Tónico Facial Caléndula" data-en="Calendula Facial Toner">Tónico Facial Caléndula</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-calendula-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta 11: Ginkgo Biloba Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="limpiador facial gingkgo biloba piel madura ahava">
+                    <div class="product-card-badge" data-es="Piel Madura" data-en="Mature Skin">Piel Madura</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-limpiador-ginkgo-biloba-principal.png" alt="Limpiador Ginkgo Biloba Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Limpiador Facial Ginkgo Biloba" data-en="Ginkgo Biloba Facial Cleanser">Limpiador Facial Ginkgo Biloba</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-ginkgo-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 12: Ginkgo Biloba Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="tonico facial gingkgo biloba piel madura ahava">
+                    <div class="product-card-badge" data-es="Piel Madura" data-en="Mature Skin">Piel Madura</div>
+                    <div class="product-card-image-wrapper"><img src="img/store-tonico-ginkgo-biloba-principal.png" alt="Tónico Ginkgo Biloba Marca Ahava"></div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA HOLÍSTICA</span>
+                        <h3 data-es="Tónico Facial Ginkgo Biloba" data-en="Ginkgo Biloba Facial Toner">Tónico Facial Ginkgo Biloba</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-ginkgo-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 13: Teen Skincare Limpiador Fresa y Sandía -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="limpiador fresa sandia pieles jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-limpiador-fresa-sandia-principal.png" alt="Limpiador de Fresa & Sandía Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Limpiador de Fresa & Sandía" data-en="Strawberry & Watermelon Cleanser">Limpiador de Fresa & Sandía</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-fresa-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 14: Teen Skincare Tónico de Fresa y Sandía -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="tonico fresa sandia pieles jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-tonico-fresa-sandia-principal.png" alt="Tónico de Fresa & Sandía Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Tónico de Fresa & Sandía" data-en="Strawberry & Watermelon Toner">Tónico de Fresa & Sandía</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-fresa-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 15: Teen Skincare Sérum de Fresa y Sandía -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="serum fresa sandia pieles jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-fresa-sandia-principal.png" alt="Sérum de Fresa & Sandía Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Sérum de Fresa & Sandía" data-en="Strawberry & Watermelon Serum">Sérum de Fresa & Sandía</h3>
+                        <span class="product-card-volume">30 ml ℮ 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$29.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-fresa-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 16: Teen Skincare Crema Fresa y Sandía -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="crema hidratante fresa sandia pieles jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-crema-fresa-sandia-principal.png" alt="Crema de Fresa & Sandía Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Crema Hidratante Fresa & Sandía" data-en="Strawberry & Watermelon Moisturizer">Crema Hidratante de Fresa & Sandía</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$29.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-fresa-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 17: Teen Skincare Limpiador Ácido Salicílico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="limpiador facial acido salicilico pieles jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-limpiador-acido-salicilico-principal.png" alt="Limpiador Facial de Ácido Salicílico Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Limpiador Facial de Ácido Salicílico" data-en="Salicylic Acid Facial Cleanser">Limpiador Facial de Ácido Salicílico</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-salicilico-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 18: Teen Skincare Tónico Ácido Salicílico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="tonico facial acido salicilico pieles jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-tonico-acido-salicilico-principal.png" alt="Tónico Facial de Ácido Salicílico Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Limpiador Facial de Ácido Salicílico" data-en="Salicylic Acid Facial Toner">Tónico Facial de Ácido Salicílico</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-salicilico-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 19: Teen Skincare Sérum Ácido Salicílico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="serum facial acido salicilico sebo regulador pieles jovenes ahava">
+                    <div class="product-card-badge-pink" data-es="Sebo Regulador" data-en="Sebum Control">Sebo Regulador</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-acido-salicilico-principal.png" alt="Sérum Facial de Ácido Salicílico Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Sérum Facial de Ácido Salicílico" data-en="Salicylic Acid Facial Serum">Sérum Facial de Ácido Salicílico</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-salicilico-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 20: Teen Skincare Crema Ácido Salicílico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-teen" data-tags="crema hidratante facial acido salicilico jovenes teen skincare ahava">
+                    <div class="product-card-badge-pink" data-es="Pieles Jóvenes" data-en="Young Skin">Pieles Jóvenes</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-crema-acido-salicilico-principal.png" alt="Crema Hidratante de Ácido Salicílico Marca Ahava Línea Teen Skincare">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">TEEN SKINCARE</span>
+                        <h3 data-es="Crema Hidratante de Ácido Salicílico" data-en="Salicylic Acid Facial Moisturizer">Crema Hidratante de Ácido Salicílico</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$29.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-teen-salicilico-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 21: Ahava Protector Solar Factor 50 SPF -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="protector solar factor 50 psf piel mixta ahava">
+                    <div class="product-card-badge" data-es="Piel Mixta" data-en="Combination Skin">Piel Mixta</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-protector-50-principal.png" alt="Protector Solar Factor 50 SPF Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA SUNSCREEN</span>
+                        <h3 data-es="Protector Solar Factor 50 SPF" data-en="SPF 50 Sunscreen">Protector Solar Factor 50 SPF</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$29.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-protector-solar" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 22: For Men Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-men" data-tags="limpiador facial for men para hombres ahava">
+                    <div class="product-card-badge" data-es="Para Hombres" data-en="For Men">Para Hombres</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-limpiador-man-principal.png" alt="Limpiador Facial para Hombres Marca Ahava Línea For Men">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOR MEN</span>
+                        <h3 data-es="Limpiador Facial para Hombres" data-en="Facial Cleanser for Men">Limpiador Facial para Hombres</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-men-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 23: For Men Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-men" data-tags="tonico facial for men para hombres ahava">
+                    <div class="product-card-badge" data-es="Para Hombres" data-en="For Men">Para Hombres</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-tonico-man-principal.png" alt="Tónico Facial para Hombres Marca Ahava Línea For Men">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOR MEN</span>
+                        <h3 data-es="Tónico Facial para Hombres" data-en="Facial Toner for Men">Tónico Facial para Hombres</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-men-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 24: For Men Sérum Facial de Bakuchiol -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-men" data-tags="serum facial bakuchiol for men para hombres ahava">
+                    <div class="product-card-badge" data-es="Para Hombres" data-en="For Men">Para Hombres</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-man-principal.png" alt="Sérum Facial para Hombres Marca Ahava Línea For Men">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOR MEN</span>
+                        <h3 data-es="Sérum Facial para Hombres" data-en="Bakuchiol Facial Serum for Men">Sérum Facial para Hombres</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-men-bakuchiol-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 25: For Men Balsamo Hidratante Arbutina -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-men" data-tags="balsamo hidratante arbutina for men para hombres ahava">
+                    <div class="product-card-badge" data-es="Para Hombres" data-en="For Men">Para Hombres</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-crema-man-principal.png" alt="Bálsamo Hidratante Arbutina para Hombres Marca Ahava Línea For Men">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOR MEN</span>
+                        <h3 data-es="Bálsamo Hidratante Arbutina para Hombres" data-en="Arbutin Moisturizing Balm for Men">Bálsamo Hidratante Arbutina para Hombres</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-men-balsamo" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 26: AHAVA Foot Care - Exfoliante para Pies -->
+                <div class="product-item-card scroll-reveal" data-brand="foot-care" data-tags="exfoliante para pies menta sal epsom foot care ahava">
+                    <div class="product-card-badge" data-es="Exfoliante para Pies" data-en="Foot Scrub">Exfoliante para Pies</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-crema-exfoliante-pies-principal.png" alt="Exfoliante para Pies Marca Ahava Línea Foot-Care">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOOT CARE</span>
+                        <h3 data-es="Exfoliante para Pies Menta & Epsom" data-en="Mint & Epsom Salt Foot Scrub">Exfoliante para Pies Menta & Epsom</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-pies-exfoliante" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 27: AHAVA Foot Care - Limpiador -->
+                <div class="product-item-card scroll-reveal" data-brand="foot-care" data-tags="limpiador de pies menta semilla uva mint grape seed cleanser foot care ahava">
+                    <div class="product-card-badge" data-es="Exfoliante para Pies" data-en="Foot Scrub">Exfoliante para Pies</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-limpiador-exfoliante-pies-principal.png" alt="Limpiador de pies de menta y semilla de uva Marca Ahava Línea Foot-Care">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOOT CARE</span>
+                        <h3 data-es="Limpiador de pies de menta y semilla de uva" data-en="Mint & Grape Seed Foot Cleanser">Limpiador de pies de menta y semilla de uva</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-pies-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 28: AHAVA Foot Care - Tónico -->
+                <div class="product-item-card scroll-reveal" data-brand="foot-care" data-tags="tonico de pies hamamelis witch hazel calendula toner foot care ahava">
+                    <div class="product-card-badge" data-es="Exfoliante para Pies" data-en="Foot Scrub">Exfoliante para Pies</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-tonico-exfoliante-pies-principal.png" alt="Tónico para pies de hamamelis y caléndula Marca Ahava Línea Foot-Care">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA FOOT CARE</span>
+                        <h3 data-es="Tónico para pies de hamamelis y caléndula" data-en="Witch Hazel & Calendula Foot Toner">Tónico para pies de hamamelis y caléndula</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-pies-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 29: Sérum ANTI-OXIDANTE ILUMINADOR CON VITAMINA C -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="serum facial anti oxidante iluminador vitamina C ahava">
+                    <div class="product-card-badge" data-es="con Vitamina C" data-en="with C Vitamin">con Vitamina C</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-antioxidante-principal.png" alt="Sérum Facial Anti-Oxidante Iluminador con Vitamina C Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA SERUMS</span>
+                        <h3 data-es="Sérum Facial Anti-Oxidante Iluminador" data-en="Brightening Anti-Oxidant Facial Serum">Sérum Anti-Oxidante Iluminador con Vitamina C</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-serum-vitamina-c" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta 30: Sérum facial REGENERADOR ANTI-AGE CON ÁCIDO HIALURÓNICO -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="serum facial regenerador anti age con acido hialuronico ahava">
+                    <div class="product-card-badge" data-es="con Ácido Hialurónico" data-en="with Hyaluronic Acid">con Ácido Hialurónico</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-regenerador-antiage-acido-hialuronico-principal.png" alt="Sérum Facial Regenerador Anti-Age con Ácido Hialurónico Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA SERUMS</span>
+                        <h3 data-es="Sérum Facial Regenerador Anti-Age con Ácido Hialurónico" data-en="Anti-Aging Regenerating Facial Serum">Sérum Facial Regenerador Anti-Age con Ácido Hialurónico</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-serum-hialuronico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta 31: Sérum facial EQUILIBRANTE Y REGENERADOR CON ARGÁN Y JOJOBA -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="serum facial equilibrante regenerador con argan y jojoba ahava">
+                    <div class="product-card-badge" data-es="con Argán & Jojoba" data-en="with Argan & Jojoba">con Argán y Jojoba</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-argan-jojoba-principal.png" alt="Sérum Facial Equilibrante Y Regenerador con Argán & Jojoba Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA SERUMS</span>
+                        <h3 data-es="Sérum Facial Equilibrante Y Regenerador con Argán & Jojoba" data-en="Balancing & Regenerating Facial Serum">Sérum Facial Equilibrante Y Regenerador con Argán & Jojoba</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-serum-argan-jojoba" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta 32: Sérum facial REGENERADOR E ILUMINADOR CON 24 KILATES COLÁGENO -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="serum facial regenerador iluminador con 24k kilates colageno ahava">
+                    <div class="product-card-badge" data-es="con 24Kilates Colágeno" data-en="with 24K Gold & Collagen">con 24Kilates Colágeno</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-iluminador-24kilates-principal.png" alt="Sérum Facial Regenerador e Iluminador con 24K & Colágeno Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA SERUMS</span>
+                        <h3 data-es="Sérum Facial Regenerador e Iluminador con 24Kilates Colágeno" data-en="Brightening & Regenerating Facial Serum">Sérum Facial Regenerador e Iluminador con 24Kilates Colágeno</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-serum-colageno-24k" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 33: Sérum facial REVITALIZA Y NUTRE CON VITAMINA E Y ROSA MOSQUETA -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="serum facial revitaliza nutre con vitamina E y rosa mosqueta ahava">
+                    <div class="product-card-badge" data-es="con Vitamina E y Rosa Mosqueta" data-en="with Vitamin E & Rosehip">con Vitamina E y Rosa Mosqueta</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-serum-revitaliza-rosa-mosqueta-principal.png" alt="Sérum Facial Rivitaliza y Nutre con Vitamina E y Rosa Mosqueta Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA SERUMS</span>
+                        <h3 data-es="Sérum Facial Rivitaliza y Nutre con Vitamina E y Rosa Mosqueta" data-en="Revitalizing & Nourishing Facial Serum">Sérum Facial Rivitaliza y Nutre con Vitamina E y Rosa Mosqueta</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-serum-vitaminae-rosa-mosqueta" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 34: Aceite Vegetal Corporal -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="aceite corporal nutritivo para masajes ahava">
+                    <div class="product-card-badge" data-es="Aceite Corporal" data-en="Body Oil">Aceite Corporal</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-aceite-corporal-principal.png" alt="Aceite corporal nutritivo para masajes Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA ACEITES CORPORALES</span>
+                        <h3 data-es="Aceite corporal nutritivo para masajes" data-en="Nourishing Massage Body Oil">Aceite corporal nutritivo para masajes</h3>
+                        <span class="product-card-volume">280 ml ℮ 9.47 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$34.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-aceite-corporal" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 35: AHAVA Mascarilla de Cúrcuma -->
+                <div class="product-item-card scroll-reveal" data-brand="face-mask" data-tags="mascarilla de curcuma ahava">
+                    <div class="product-card-badge" data-es="Mascarilla" data-en="Face Mask">Mascarilla</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-mascarilla-curcuma.png" alt="Macarilla de Cúrcuma Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA MASCARILLAS</span>
+                        <h3 data-es="Mascarilla de Cúrcuma" data-en="Turmeric Face Mask">Mascarilla de Cúrcuma</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-mascarilla-curcuma" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 36: AHAVA Mascarilla de Ylang Ylang -->
+                <div class="product-item-card scroll-reveal" data-brand="face-mask" data-tags="mascarilla de ylang ahava">
+                    <div class="product-card-badge" data-es="Mascarilla" data-en="Face Mask">Mascarilla</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-mascarilla-ylang-principal.png" alt="Macarilla de Ylang Ylang Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA MASCARILLAS</span>
+                        <h3 data-es="Mascarilla de Ylang Ylang" data-en="Ylang Ylang Face Mask">Mascarilla de Ylang Ylang</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-mascarilla-ylangylang" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 37: AHAVA Mascarilla de Colageno Alantoína -->
+                <div class="product-item-card scroll-reveal" data-brand="face-mask" data-tags="mascarilla de colageno alantoína ahava">
+                    <div class="product-card-badge" data-es="Mascarilla" data-en="Face Mask">Mascarilla</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-mascarilla-alantoina-principal.png" alt="Mascarilla de Colageno Alantoína Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA MASCARILLAS</span>
+                        <h3 data-es="Mascarilla de Colageno Alantoína" data-en="Collagen & Allantoin Face Mask">Mascarilla de Colageno Alantoína</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-mascarilla-colageno-alantoina" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 38: AHAVA Mascarilla de Menta y Piperita -->
+                <div class="product-item-card scroll-reveal" data-brand="face-mask" data-tags="mascarilla de menta y piperita ahava">
+                    <div class="product-card-badge" data-es="Mascarilla" data-en="Face Mask">Mascarilla</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-mascarilla-menta-piperita-principal.png" alt="Mascarilla de Menta & Piperita Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA MASCARILLAS</span>
+                        <h3 data-es="Mascarilla de Menta & Piperita" data-en="Peppermint Face Mask ">Mascarilla de Menta & Piperita</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-mascarilla-menta-piperita" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta 39: AHAVA Crema Despigmentante con Ácido Kojico -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="Crema despigmentante con acido kojico ahava">
+                    <div class="product-card-badge" data-es="Crema" data-en="Cream">Crema</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-crema-acido-kojico-principal.png" alt="Crema despigmentante con ácido kojico Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA MASCARILLAS</span>
+                        <h3 data-es="Crema Despigmentante con Ácido Kojico" data-en="Kojic Acid Depigmenting Cream">Crema Despigmentante con Ácido Kojico</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-crema-kojico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Tarjeta 40: AHAVA Crema de arbutina - colágeno -->
+                <div class="product-item-card scroll-reveal" data-brand="ahava-classic" data-tags="crema arbutina colageno ahava">
+                    <div class="product-card-badge" data-es="Crema" data-en="Cream">Crema</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/store-crema-arbutina-principal.png" alt="Crema de arbutina & colágeno Marca Ahava">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">AHAVA MASCARILLAS</span>
+                        <h3 data-es="Crema de arbutina & colágeno" data-en="Arbutin & Collagen Cream">Crema de arbutina & colágeno</h3>
+                        <span class="product-card-volume">100 g e 3.52 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$26.00</span>
+                            <button class="btn-open-modal btn-secondary-ahava" data-product="ahava-crema-arbutina-colageno" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Cierre de products-grid de AHAVA -->
+        </div> <!-- Cierre de container de AHAVA -->
+    </section> <!-- Cierre de la sección de pasillo AHAVA -->
+
+
+    <!-- PASILLO VISUAL DE MARCA 2: SECCIÓN SPA BIONOAH -->
+    <section id="seccion-bionoah" class="brand-section-pasillo section-bionoah-theme section-padding">
+        <div class="container">
+            <div class="brand-pasillo-header scroll-reveal">
+                <span class="pasillo-mini-tag-gold">SPA BIONOAH - DEAD SEA MINERALS</span>
+                <h2 class="serif-title">Línea Premium BioNoah</h2>
+                <p class="section-subtitle" data-es="Biotecnología celular avanzada formulada con Colágeno, Elastina, Trufa Blanca y extractos antioxidantes de alta montaña." data-en="Advanced cellular biotechnology formulated with Collagen, Elastin, White Truffle, and high-mountain antioxidant extracts.">Biotecnología celular avanzada formulada con Colágeno, Elastina, Trufa Blanca y extractos antioxidantes de alta montaña.</p>
+            </div>
+            
+            <div class="products-grid container-top">
+
+                <!-- Tarjeta 41: BioNoah Tónico Facial Colágeno & Elastina -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-collagen" data-tags="tonico facial colageno elastina piel madura bionoah">
+                    <div class="product-card-badge-gold" data-es="Piel Madura" data-en="Mature Skin">Piel Madura</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-tonico-colageno-elastina.jpg" alt="Tónico Colágeno & Elastina Marca BioNoah">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Tónico Facial Colágeno & Elastina" data-en="Collagen & Elastin Facial Toner">Tónico Facial Colágeno & Elastina</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$45.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-colageno-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 42: BioNoah Gel Limpiador Colágeno & Elastina -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-collagen" data-tags="gel limpiador colageno elastina piel madura bionoah">
+                    <div class="product-card-badge-gold" data-es="Piel Madura" data-en="Mature Skin">Piel Madura</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-limpiador-colageno-elastina.jpg" alt="Gel Limpiador Colágeno & Elastina">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Gel Limpiador con Colágeno & Elastina" data-en="Collagen & Elastin Cleansing Gel">Gel Limpiador con Colágeno & Elastina</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$42.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-colageno-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 43: BioNoah Sérum Facial Colágeno & Elastina -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-collagen" data-tags="serum facial colageno elastina piel madura bionoah">
+                    <div class="product-card-badge-gold" data-es="Piel Madura" data-en="Mature Skin">Piel Madura</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-serum-colageno-elastina.jpg" alt="Sérum Facial Colágeno & Elastina">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Sérum Facial con Colágeno & Elastina" data-en="Collagen & Elastin Facial Serum">Sérum Facial con Colágeno & Elastina</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$55.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-colageno-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 44: BioNoah Crema Facial de Noche Colágeno & Elastina -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-collagen" data-tags="crema facial noche colageno elastina piel madura bionoah">
+                    <div class="product-card-badge-gold" data-es="Piel Madura" data-en="Mature Skin">Piel Madura</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-crema-colageno-elastina.jpg" alt="Crema de Noche Colágeno & Elastina">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Crema de Noche con Colágeno & Elastina" data-en="Collagen & Elastin Night Cream">Crema de Noche con Colágeno & Elastina</h3>
+                        <span class="product-card-volume">100 g e 3.38 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$48.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-colageno-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 45: BioNoah Tónico Facial Trufa Blanca -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-trufa" data-tags="tonico facial trufa blanca manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Tono Uniforme" data-en="Even Tone">Tono Uniforme</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-tonico-trufa-blanca.jpg" alt="Tónico Facial con Trufa Blanca">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Tónico Facial con Trufa Blanca" data-en="White Truffle Facial Toner">Tónico Facial con Trufa Blanca</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$45.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-trufa-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 46: BioNoah Gel Limpiador Trufa Blanca -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-trufa" data-tags="gel limpiador trufa blanca manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Tono Uniforme" data-en="Even Tone">Tono Uniforme</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-limpiador-trufa-blanca.jpg" alt="Gel Limpiador con Trufa Blanca">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Gel Limpiador con Trufa Blanca" data-en="White Truffle Cleansing Gel">Gel Limpiador con Trufa Blanca</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$42.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-trufa-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 47: BioNoah Sérum Facial Trufa Blanca -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-trufa" data-tags="serum facial trufa blanca manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Tono Uniforme" data-en="Even Tone">Tono Uniforme</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-serum-trufa-blanca.jpg" alt="Sérum Facial con Trufa Blanca">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Sérum Facial con Trufa Blanca" data-en="White Truffle Facial Serum">Sérum Facial con Trufa Blanca</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$55.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-trufa-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 48: BioNoah Crema de Noche Trufa Blanca -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-trufa" data-tags="crema facial noche trufa blanca manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Tono Uniforme" data-en="Even Tone">Tono Uniforme</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-crema-trufa-blanca.jpg" alt="Crema de Noche con Trufa Blanca">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Crema Facial con Trufa Blanca" data-en="White Truffle Facial Cream">Crema Facial con Trufa Blanca</h3>
+                        <span class="product-card-volume">100 g e 3.38 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$48.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-trufa-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 49: BioNoah Tónico Facial Uchuva -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-uchuva" data-tags="tonico facial uchuva antioxidante revitaliza bionoah">
+                    <div class="product-card-badge-gold" data-es="Antioxidante" data-en="Antioxidant">Antioxidante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-tonico-uchuva.jpg" alt="Tónico Facial con extracto de Uchuva">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Tónico Facial con extracto de Uchuva" data-en="Uchuva Extract Facial Toner">Tónico Facial con extracto de Uchuva</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$45.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-uchuva-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 50: BioNoah Gel Limpiador Uchuva -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-uchuva" data-tags="gel limpiador uchuva antioxidante revitaliza bionoah">
+                    <div class="product-card-badge-gold" data-es="Antioxidante" data-en="Antioxidant">Antioxidante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-limpiador-uchuva.jpg" alt="Gel Limpiador con extracto de Uchuva">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Gel Limpiador con extracto de Uchuva" data-en="Uchuva Extract Cleansing Gel">Gel Limpiador con extracto de Uchuva</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$42.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-uchuva-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 51: BioNoah Sérum Facial Uchuva -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-uchuva" data-tags="serum facial uchuva antioxidante revitaliza bionoah">
+                    <div class="product-card-badge-gold" data-es="Antioxidante" data-en="Antioxidant">Antioxidante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-serum-uchuva.jpg" alt="Sérum Facial con extracto de Uchuva">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Sérum Facial con extracto de Uchuva" data-en="Uchuva Extract Facial Serum">Sérum Facial con extracto de Uchuva</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$55.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-uchuva-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 52: BioNoah Crema de Noche Uchuva -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-uchuva" data-tags="crema facial noche uchuva antioxidante nutrion bionoah">
+                    <div class="product-card-badge-gold" data-es="Antioxidante" data-en="Antioxidant">Antioxidante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-crema-uchuva.jpg" alt="Crema Facial con extracto de Uchuva">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Crema Facial con extracto de Uchuva" data-en="Uchuva Extract Facial Cream">Crema Facial con extracto de Uchuva</h3>
+                        <span class="product-card-volume">100 g e 3.38 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$48.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-uchuva-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 53: BioNoah Tónico Facial Bakuchiol -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-bakuchiol" data-tags="tonico facial bakuchiol renovacion antioxidante bionoah">
+                    <div class="product-card-badge-gold" data-es="Renovación Celular" data-en="Cell Renewal">Renovación Celular</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-tonico-bakuchiol.jpg" alt="Tónico Facial con Bakuchiol">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Tónico Facial con Bakuchiol" data-en="Bakuchiol Facial Toner">Tónico Facial con Bakuchiol</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$45.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-bakuchiol-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 54: BioNoah Gel Limpiador Bakuchiol -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-bakuchiol" data-tags="gel limpiador bakuchiol renovacion proteccion bionoah">
+                    <div class="product-card-badge-gold" data-es="Renovación Celular" data-en="Cell Renewal">Renovación Celular</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-limpiador-bakuchiol.jpg" alt="Gel Limpiador con Bakuchiol">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Gel Limpiador con Bakuchiol" data-en="Bakuchiol Cleansing Gel">Gel Limpiador con Bakuchiol</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$42.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-bakuchiol-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 55: BioNoah Sérum Facial Bakuchiol -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-bakuchiol" data-tags="serum facial bakuchiol renovacion firmeza bionoah">
+                    <div class="product-card-badge-gold" data-es="Renovación Celular" data-en="Cell Renewal">Renovación Celular</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-serum-bakuchiol.jpg" alt="Sérum Facial con Bakuchiol">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Sérum Facial con Bakuchiol" data-en="Bakuchiol Facial Serum">Sérum Facial con Bakuchiol</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$55.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-bakuchiol-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 56: BioNoah Crema de Noche Bakuchiol -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-bakuchiol" data-tags="crema facial noche bakuchiol renovacion nutricion bionoah">
+                    <div class="product-card-badge-gold" data-es="Renovación Celular" data-en="Cell Renewal">Renovación Celular</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-crema-bakuchiol.jpg" alt="Crema Facial con Bakuchiol">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Crema Facial con Bakuchiol" data-en="Bakuchiol Facial Cream">Crema Facial con Bakuchiol</h3>
+                        <span class="product-card-volume">120 g e 4.23 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$48.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-bakuchiol-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 57: BioNoah Tónico Facial Ácido Kójico y Glicólico -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-kojico-glicolico" data-tags="tonico facial acido kojico glicolico iluminador manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Despigmentante" data-en="Brightening">Despigmentante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-tonico-acido-kojico.jpg" alt="Tónico Facial con Ácido Kójico y Glicólico">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Tónico Facial con Ácido Kójico y Glicólico" data-en="Kojic & Glycolic Acid Facial Toner">Tónico Facial con Ácido Kójico y Glicólico</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$45.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-kojico-tonico" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 58: BioNoah Gel Limpiador Ácido Kójico y Glicólico -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-kojico-glicolico" data-tags="gel limpiador acido kojico glicolico iluminador manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Despigmentante" data-en="Brightening">Despigmentante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-limpiador-acido-cojico.jpg" alt="Gel Limpiador con Ácido Kójico y Glicólico">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Gel Limpiador con Ácido Kójico y Glicólico" data-en="Kojic & Glycolic Acid Cleansing Gel">Gel Limpiador con Ácido Kójico y Glicólico</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$42.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-kojico-limpiador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 59: BioNoah Sérum Facial Ácido Kójico y Glicólico -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-kojico-glicolico" data-tags="serum facial acido kojico glicolico despigmentante manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Despigmentante" data-en="Brightening">Despigmentante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-serum-acido-kojico.jpg" alt="Sérum Facial con Ácido Kójico y Glicólico">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Sérum Facial con Ácido Kójico y Glicólico" data-en="Kojic & Glycolic Acid Facial Serum">Sérum Facial con Ácido Kójico y Glicólico</h3>
+                        <span class="product-card-volume">30 ml e 1.01 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$55.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-kojico-serum" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 60: BioNoah Crema de Noche Ácido Kójico y Glicólico -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-kojico-glicolico" data-tags="crema facial noche acido kojico glicolico renovacion manchas bionoah">
+                    <div class="product-card-badge-gold" data-es="Despigmentante" data-en="Brightening">Despigmentante</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-crema-acido-kojico.jpg" alt="Crema Facial con Ácido Kójico y Glicólico">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Crema Facial con Ácido Kójico y Glicólico" data-en="Kojic & Glycolic Acid Facial Cream">Crema Facial con Ácido Kójico y Glicólico</h3>
+                        <span class="product-card-volume">250 ml e 8.45 fl. oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$48.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-kojico-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 61: BioNoah Crema de Día con Ácido Hialurónico -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-hialuronico" data-tags="crema facial dia acido hialuronico hidratacion elasticidad bionoah">
+                    <div class="product-card-badge-gold" data-es="Hidratación Intensiva" data-en="Intensive Hydration">Hidratación Intensiva</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-crema-acido-hialuronico.jpg" alt="Crema Facial con Ácido Hialurónico">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Crema Facial con Ácido Hialurónico" data-en="Hyaluronic Acid Facial Cream">Crema Facial con Ácido Hialurónico</h3>
+                        <span class="product-card-volume">180 g e 6.09 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$46.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-hialuronico-crema" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 62: BioNoah Contorno de Ojos con Ácido Hialurónico -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-hialuronico" data-tags="contorno ojos acido hialuronico ojeras lineas expresion bionoah">
+                    <div class="product-card-badge-gold" data-es="Cuidado Ocular" data-en="Eye Care">Cuidado Ocular</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-contorno-ojos.jpg" alt="Contorno de Ojos con Ácido Hialurónico">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Contorno de Ojos con Ácido Hialurónico" data-en="Hyaluronic Acid Eye Cream">Contorno de Ojos con Ácido Hialurónico</h3>
+                        <span class="product-card-volume">30 g e 1.06 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$38.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-hialuronico-contorno" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 63: BioNoah Bloqueador Solar Facial SPF 50 -->
+                <div class="product-item-card scroll-reveal" data-brand="bionoah-solar" data-tags="bloqueador solar facial spf 50 proteccion uv bionoah">
+                    <div class="product-card-badge-gold" data-es="Protección Solar" data-en="Sun Protection">Protección Solar</div>
+                    <div class="product-card-image-wrapper">
+                        <img src="img/noah-bloqueador.jpg" alt="Bloqueador Solar Facial con SPF 50">
+                    </div>
+                    <div class="product-card-info">
+                        <span class="product-card-brand">SPA BIONOAH</span>
+                        <h3 data-es="Bloqueador Solar Facial con SPF 50" data-en="SPF 50 Facial Sunscreen">Bloqueador Solar Facial con SPF 50</h3>
+                        <span class="product-card-volume">10 g e 0.47 oz.</span>
+                        <div class="product-card-footer">
+                            <span class="product-card-price">$25.00</span>
+                            <button class="btn-open-modal btn-secondary-bionoah" data-product="noah-solar-bloqueador" data-es="Ver Detalles" data-en="View Details">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Cierre de products-grid de BioNoah -->
+        </div> <!-- Cierre de container de BioNoah -->
+    </section>
+    
+        <!-- MODAL 1: FICHA TÉCNICA DINÁMICA DE PRODUCTO  -->
+    <div id="product-detail-modal" class="store-modal-backdrop">
+        <div class="store-modal-container">
+            <button id="modal-close-x" class="modal-close-x-btn" aria-label="Cerrar">&times;</button>
+            
+            <div class="store-modal-content-grid">
+                <!-- Columna Izquierda Visual -->
+                <div id="modal-left-column" class="modal-visual-column">
+                    <div class="modal-brand-header">
+                        <span id="modal-brand-subtitle" class="modal-mini-brand"></span>
+                        <h2 id="modal-brand-fluid-title" class="modal-fluid-title"></h2>
+                    </div>
+                    <div class="modal-product-image-frame">
+                        <img id="modal-product-img" src="" alt="Producto Detalle">
+                    </div>
+                    <div class="modal-safety-badges-row">
+                        <div class="safety-badge-item">
+                            <div class="badge-icon-circle">🌱</div>
+                            <span data-es="Sin Parabenos" data-en="Paraben Free">Sin Parabenos</span>
+                        </div>
+                        <div class="safety-badge-item">
+                            <div class="badge-icon-circle">🧪</div>
+                            <span data-es="Dermatológico" data-en="Dermatological">Dermatológico</span>
+                        </div>
+                        <div class="safety-badge-item">
+                            <div class="badge-icon-circle">✨</div>
+                            <span data-es="Fórmula Ligera" data-en="Lightweight">Fórmula Ligera</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha de Especificaciones Técnicas -->
+                <div class="modal-technical-column">
+                    <div class="modal-product-main-header">
+                        <h3 id="modal-product-title"></h3>
+                        <span id="modal-product-net-weight" class="modal-net-weight"></span>
+                    </div>
+                    
+                    <div class="technical-block">
+                        <h4 class="technical-block-title" data-es="Beneficios" data-en="Benefits">Beneficios</h4>
+                        <p id="modal-product-benefits" class="technical-block-text"></p>
+                    </div>
+                    
+                    <div class="technical-block">
+                        <h4 class="technical-block-title" data-es="Modo de Uso" data-en="How to Use">Modo de Uso</h4>
+                        <p id="modal-product-usage" class="technical-block-text"></p>
+                    </div>
+                    
+                    <div class="technical-block">
+                        <h4 class="technical-block-title" data-es="Ingredientes" data-en="Ingredients">Ingredientes</h4>
+                        <p id="modal-product-ingredients" class="technical-block-text"></p>
+                    </div>
+                    
+                    <div class="technical-block block-precautions">
+                        <h4 class="technical-block-title" data-es="Precauciones" data-en="Precautions">Precauciones</h4>
+                        <p id="modal-product-precautions" class="technical-block-text"></p>
+                    </div>
+                    
+                    
+                    <div id="modal-variants-section" class="modal-variants-section" style="display: none;">
+                        <h4 class="technical-block-title" data-es="Selecciona tus Esencias" data-en="Select your Essences">Selecciona tus Esencias</h4>
+                        <div id="variants-selectors-container" class="variants-selectors-container">
+                            <!-- Inyección limpia mediante JS -->
+                        </div>
+                    </div>
+
+
+                    <!-- Módulo de conversión de compra -->
+                    <div class="modal-conversion-container">
+                        <div class="modal-price-row">
+                            <span class="conversion-label" data-es="Precio Unitario:" data-en="Unit Price:">Precio Unitario:</span>
+                            <span id="modal-product-price" class="conversion-price"></span>
+                        </div>
+                        <div class="conversion-actions-row">
+                            <div class="quantity-selector-wrapper">
+                                <button id="btn-qty-minus" class="qty-btn" type="button">&#8722;</button>
+                                <input type="number" id="qty-counter-input" class="qty-input" value="0" min="0" max="99">
+                                <button id="btn-qty-plus" class="qty-btn" type="button">&#43;</button>
+                            </div>
+                            <button id="btn-add-to-cart" class="btn-primary-store btn-add-cart-fluid" type="button" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-base-footer">
+                        <button id="modal-close-base" class="btn-modal-close-text" data-es="Cerrar Detalle" data-en="Close Details">Cerrar Detalle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL 2: CARRITO DE COMPRAS EXTENDIDO  -->
+    <div id="store-cart-modal" class="store-modal-backdrop">
+        <div class="store-modal-container modal-cart-extended-size">
+            <button id="cart-modal-close-x" class="modal-close-x-btn" aria-label="Cerrar">&times;</button>
+            <div class="cart-extended-wrapper">
+                <h2 class="serif-title" data-es="Tu Carrito de Compras" data-en="Your Shopping Cart">Tu Carrito de Compras</h2>
+                
+                <!-- Tabla del listado de artículos agregados -->
+                <div class="cart-items-table-container">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th data-es="Producto" data-en="Product">Producto</th>
+                                <th data-es="Precio" data-en="Price">Precio</th>
+                                <th data-es="Cantidad" data-en="Quantity">Cantidad</th>
+                                <th data-es="Total" data-en="Total">Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-table-body">
+                            <!-- Se inyecta dinámicamente desde JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Bloque de Configuración Logística e Impuestos -->
+                <div class="cart-summary-logistics-grid container-top">
+                    <!-- Configuración de Envío y Facturación Básica -->
+                    <div class="cart-logistics-options-panel">
+                        <h4 class="technical-block-title" data-es="Datos de Entrega y Logística" data-en="Delivery & Logistics Data">Datos de Entrega y Logística</h4>
+                        <div class="secure-formcontainer row-inputs container-top">
+                            <select id="cart-shipping-method-select" required>
+                                <option value="pickup" data-es="Retirar en Sede Aliada (Envío Gratis - $0.00)" data-en="Pickup at Allied Branch (Free Shipping - $0.00)">Retirar en Sede Aliada (Envío Gratis - $0.00)</option>
+                                <option value="delivery" data-es="Envío Certificado a Domicilio ($10.00)" data-en="Certified Home Delivery ($10.00)">Envío Certificado a Domicilio ($10.00)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de Cálculos Fiscales en Tiempo Real -->
+                    <div class="cart-financial-breakdown-panel">
+                        <div class="financial-row">
+                            <span data-es="Subtotal:" data-en="Subtotal:">Subtotal:</span>
+                            <span id="breakdown-subtotal">$0.00</span>
+                        </div>
+                        <div class="financial-row">
+                            <span data-es="Costo de Envío:" data-en="Shipping Cost:">Costo de Envío:</span>
+                            <span id="breakdown-shipping">$0.00</span>
+                        </div>
+                        <div class="financial-row">
+                            <span data-es="Impuesto IVA (13%):" data-en="VAT Tax (13%):">Impuesto IVA (13%):</span>
+                            <span id="breakdown-tax">$0.00</span>
+                        </div>
+                        <div class="financial-row total-highlight">
+                            <span data-es="Gran Total a Pagar:" data-en="Grand Total:">Gran Total a Pagar:</span>
+                            <span id="breakdown-grand-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción del Carrito -->
+                <div class="cart-modal-actions-footer container-top">
+                    <button id="btn-cart-continue-shopping" class="btn-store-cta" data-es="Seguir Comprando" data-en="Continue Shopping">Seguir Comprando</button>
+                    <button id="btn-cart-proceed-checkout" class="btn-primary-store text-uppercase letter-spacing" data-es="Proceder al Pago" data-en="Proceed to Checkout">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: REGISTRO DE IDENTIDAD Y COMPROBANTE FINAL (Oculto por Etapas) -->
+    <div id="secure-register-modal" class="store-modal-backdrop">
+        <div class="store-modal-container modal-register-size">
+            <button id="register-modal-close-x" class="modal-close-x-btn" aria-label="Cerrar">&times;</button>
+            <div class="store-modal-content-grid">
+                <div class="modal-visual-column bg-secure-lock">
+                    <div class="modal-brand-header">
+                        <span class="secure-badge-pill">🔒 ENTORNO CIFRADO</span>
+                        Verificación de Identidad</h2>
+                    </div>
+                    <div id="register-stage-left-icon" class="secure-lock-visual-icon">🛡️</div>
+                                        <div class="secure-footer-badges flex-column-mobile">
+                        <span>🛡️ PCI-DSS Compliant</span>
+                        <span>🛡️ TLS 1.3 Certified</span>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha Dinámica: Formulario de Registro u Hoja de Pago Final -->
+                <div class="modal-technical-column padding-register-modal">
+                    <!-- PASO A: FORMULARIO DE REGISTRO (Con Botón de Validación Integrado) -->
+                    <div id="checkout-stage-register-box">
+                        <div class="modal-product-main-header">
+                            <h3 data-es="Crear Cuenta de Cliente" data-en="Create Customer Account">Crear Cuenta de Cliente</h3>
+                            Completa tus datos de identidad para validar y salvaguardar tu facturación antes de transferir.</p>
+                        </div>
+
+                        <form id="form-customer-registration" action="#" class="contact-form secure-formcontainer container-top">
+                            <div class="grid-2 gap-compact">
+                                <input type="text" id="reg-name" placeholder="Nombre completo" required>
+                                <input type="text" id="reg-id" placeholder="Cédula Física / Jurídica / Pasaporte" required>
+                            </div>
+                            
+                            <div class="grid-2 gap-compact">
+                                <input type="email" id="reg-email" placeholder="Correo electrónico" required>
+                                <input type="tel" id="reg-phone" placeholder="Número de teléfono móvil" required>
+                            </div>
+                            
+                            <input type="password" id="reg-pass" placeholder="Crea una contraseña segura" required>
+                            
+                            <textarea id="reg-address" rows="2" placeholder="Dirección exacta de facturación y envío a domicilio..." required></textarea>
+                            
+                            <div class="terms-acceptance-wrapper">
+                                <label class="checkbox-custom-container">
+                                    <input type="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="terms-text">
+                                        <span data-es="Acepto expresamente los Términos, Condiciones y Políticas de Salvaguarda Comercial de este portal." data-en="I expressly accept the Terms, Conditions, and Commercial Safeguard Policies of this portal.">Acepto expresamente los Términos, Condiciones y Políticas de Salvaguarda Comercial de este portal.</span>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <!-- Botón de Envío de Formulario Añadido Expresamente -->
+                           <button>Validar Identidad y Proceder al Pago</button>
+                        </form>
+                    </div>
+
+                    <!-- PASO B: PANEL DE COMPROBACIÓN BANCARIA (Oculto inicialmente, se activa al registrarse) -->
+                    <div id="checkout-stage-payment-box" style="display: none;">
+                        <div class="modal-product-main-header">
+                            <h3 data-es="Ejecutar Pago Seguro" data-en="Execute Secure Payment">Ejecutar Pago Seguro</h3>
+                            <p class="technical-block-text" data-es="Tu perfil ha sido verificado con éxito. Selecciona tu método preferido para finalizar la transferencia de tu orden de compra:" data-en="Your profile has been successfully verified. Select your preferred method to finalize your purchase order transfer:">Tu perfil ha sido verificado con éxito. Selecciona tu método preferido para finalizar la transferencia de tu orden de compra:</p>
+                        </div>
+
+                        <form id="form-secure-payment-final" action="#" class="contact-form secure-formcontainer container-top">
+                            <div class="payment-accordion-container">
+                                <!-- Opción 1: Tarjetas (PCI-DSS Tokenizado) -->
+                                <div class="payment-method-block active">
+                                    <div class="payment-method-header">
+                                        <input type="radio" name="payment-option" id="pay-card" checked>
+                                        <label for="pay-card" data-es="Tarjeta de Crédito / Débito (Cifrado Bancario)" data-en="Credit / Debit Card (Bank Coded)">Tarjeta de Crédito / Débito (Cifrado Bancario)</label>
+                                    </div>
+                                    <div class="payment-method-body">
+                                        <div class="card-inputs-grid">
+                                            <input type="text" placeholder="Número de Tarjeta (XXXX XXXX XXXX XXXX)">
+                                            <input type="text" placeholder="Nombre del Titular">
+                                            <div class="grid-2 gap-compact">
+                                                <input type="text" placeholder="MM / AA">
+                                                <input type="password" placeholder="CVV" maxlength="4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Opción 2: SINPE Móvil -->
+                                <div class="payment-method-block">
+                                    <div class="payment-method-header">
+                                        <input type="radio" name="payment-option" id="pay-sinpe">
+                                        <label for="pay-sinpe">SINPE Móvil</label>
+                                    </div>
+                                    <div class="payment-method-body">
+                                        <p class="payment-instructions" data-es="Transfiere al teléfono corporativo oficial y adjunta o digita el comprobante único:" data-en="Transfer to the official corporate phone and attach or type the unique voucher:">Transfiere al teléfono corporativo oficial y adjunta o digita el comprobante único:</p>
+                                        <div class="payment-bank-box">
+                                            <strong>📱 Teléfono:</strong> 6217-6297<br>
+                                            <strong>👤 A nombre de:</strong> Wellness Spa Group S.A.
+                                        </div>
+                                        <input type="text" placeholder="Número de Comprobante / Referencia SINPE">
+                                    </div>
+                                </div>
+
+                                <!-- Opción 3: Depósito Bancario -->
+                                <div class="payment-method-block">
+                                    <div class="payment-method-header">
+                                        <input type="radio" name="payment-option" id="pay-bank">
+                                        <label for="pay-bank" data-es="Depósito Bancario / Cuenta IBAN" data-en="Bank Deposit / IBAN Account">Depósito Bancario / Cuenta IBAN</label>
+                                    </div>
+                                    <div class="payment-method-body">
+                                        <div class="payment-bank-box font-monospace">
+                                            <strong>BNCR IBAN:</strong> CR12015100012345678901<br>
+                                            <strong>BAC IBAN:</strong> CR98010200098765432102<br>
+                                            <strong>Cédula Jurídica:</strong> 3-101-999999
+                                        </div>
+                                        <input type="text" placeholder="Número de Transferencia Bancaria">
+                                    </div>
+                                </div>
+
+                                <div class="payment-method-block">
+                                    <div class="payment-method-header">
+                                        <input type="radio" name="payment_processor" id="pay-paypal" value="paypal">
+                                        <label for="pay-paypal" data-es="PayPal (Crédito / Débito / Cuenta Internacional)" data-en="PayPal (Credit / Debit / International Account)">PayPal (Crédito / Débito / Cuenta Internacional)</label>
+                                    </div>
+                                    <div class="payment-method-body">
+                                        <p class="payment-instructions" data-es="Serás conectado de forma cifrada a la pasarela internacional de PayPal para procesar tu saldo o tus tarjetas." data-en="You will be securely connected to PayPal international gateway to process your balance or cards.">
+                                            Serás conectado de forma cifrada a la pasarela internacional de PayPal para procesar tu saldo o tus tarjetas.
+                                        </p>
+                                        <!-- Contenedor crítico donde tu JS dibuja el botón -->
+                                        <div id="paypal-button-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Opción 4: Efectivo (Solo Contra Entrega en Retiro) -->
+                                <div class="payment-method-block" id="block-pay-cash-item">
+                                    <div class="payment-method-header">
+                                        <input type="radio" name="payment-option" id="pay-cash">
+                                        <label for="pay-cash" data-es="Efectivo (Pago en Recepción al Retirar)" data-en="Cash (Pay at Reception on Pickup)">Efectivo (Pago en Recepción al Retirar)</label>
+                                    </div>
+                                    <div class="payment-method-body">
+                                        <p class="payment-instructions" data-es="Tu pedido quedará reservado por 48 horas en la sede seleccionada:" data-en="Your order will be reserved for 48 hours at the selected branch:">Tu pedido quedará reservado por 48 horas en la sede seleccionada:</p>
+                                        <div class="payment-bank-box" id="payment-pickup-location-text">
+                                            -- Sede seleccionada en el carrito --
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary-store full-width container-top text-uppercase letter-spacing" data-es="Subir Comprobante y Finalizar Compra" data-en="Upload Voucher & Finalize Purchase">Subir Comprobante y Finalizar Compra</button>
+                                                    </form>
+                    </div>
+                </div>
+            </div> <!-- Cierre de store-modal-content-grid -->
+        </div> <!-- Cierre de store-modal-container -->
+    </div> <!-- Cierre de secure-register-modal -->
+
+    <!-- SECCIÓN: NUESTRA BIBLIOTECA DE BIENESTAR (Descarga de Catálogos en PDF) -->
+    <section class="download-catalogues-section section-padding">
+        <div class="container text-center">
+            <h2 class="serif-title scroll-reveal" data-es="Nuestra Biblioteca de Bienestar" data-en="Our Wellness Library">Nuestra Biblioteca de Bienestar</h2>
+            <p class="section-subtitle scroll-reveal" data-es="Lleva contigo nuestras guías completas de tratamientos y fórmulas cosméticas conscientes en formato digital." data-en="Take our comprehensive treatment guides and conscious cosmetic formulas with you in digital format.">Lleva contigo nuestras guías completas de tratamientos y fórmulas cosméticas conscientes en formato digital.</p>
+            
+            <div class="grid-2 container-top">
+                <!-- Bloque Descarga Catálogo de Productos BioNoah -->
+                 
+                <div class="download-card card-gradient-spa scroll-reveal">
+                    <!--<h3 data-es="Catálogo Spa BioNoah" data-en="Spa Bio Noah Catalogue">Catálogo Spa Bio Noah</h3>
+                    <p data-es="Fórmulas avanzadas e ingredientes activos de la línea BioNoah." data-en="Advanced formulas and active ingredients from Spa BioNoah line.">Fórmulas avanzadas e ingredientes activos de la línea Spa BioNoah.</p> -->
+                    <img class="producto" src="img/store-catalogo-bionoah.PNG" alt="Catálogo de Productos de Bionoah">
+                    <a href="pdf/store-catalogo-BioNoah.pdf" class="btn-store-cta" download data-es="Descargar Brochure PDF" data-en="Download Catalogue PDF">Descargar Catálogo PDF</a>
+                </div>
+                
+                <!-- Bloque Descarga Catálogo de Productos Ahava -->
+                 
+                <div class="download-card card-gradient-store scroll-reveal">
+                    <!--<h3 data-es="Catálogo de Productos 2026" data-en="Product Catalogue 2026">Catálogo de Productos 2026</h3>
+                    <p data-es="Fórmulas avanzadas e ingredientes activos de la línea AHAVA." data-en="Advanced formulas and active ingredients from AHAVA line.">Fórmulas avanzadas e ingredientes activos de la línea AHAVA.</p> -->
+                    <img class="producto" src="img/store-catalogo-ahava.PNG" alt="Catálogo de productos de Ahava">
+                    <a href="pdf/store-catalogo-ahava.pdf" class="btn-store-cta" download data-es="Descargar Catálogo PDF" data-en="Download Catalogue PDF">Descargar Catálogo PDF</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TÉRMINOS Y CONDICIONES EN ACORDEÓN -->
+    <section id="politicas-legales" class="section-padding bg-dark-green text-light">
+        <div class="container scroll-reveal">
+            <div id="legal-accordion-header" class="legal-accordion-trigger">
+                <h2 class="serif-title text-light" data-es="Términos, Condiciones y Políticas de Salvaguarda Comercial" data-en="Terms, Conditions, and Commercial Safeguard Policies">Términos, Condiciones y Políticas de Salvaguarda Comercial</h2>
+                <span id="legal-arrow-icon" class="legal-arrow">&#9662;</span>
+            </div>
+            
+            <div id="legal-accordion-body" class="legal-accordion-content-box">
+                <div class="legal-text-wrapper">
+                    <p><strong>1. Políticas de Envío y Logística de Distribución:</strong> Wellness Spa Group coordina los envíos de la Wellness Store mediante empresas de transporte certificadas. Los plazos estimados de entrega para el Gran Área Metropolitana (GAM) oscilan entre 24 y 48 horas hábiles, y de 3 a 5 días hábiles para zonas periféricas del territorio nacional, calculados a partir de la validación del pago. El grupo queda exento de cualquier responsabilidad civil por retrasos derivados de situaciones de fuerza mayor, cierres viales imprevistos o condiciones meteorológicas adversas.</p>
+                    <p><strong>2. Exención de Responsabilidad Médica, Dermatológica y Cosmética:</strong> Las fórmulas holísticas de las líneas AHAVA y SPA BioNoah corresponden a productos de uso cosmético externo y terapéutico de bienestar general. Bajo ninguna circunstancia sustituyen tratamientos dermatológicos, diagnósticos clínicos o prescripciones médicas emitidas por profesionales de la salud. Es responsabilidad absoluta del consumidor revisar exhaustivamente el apartado de "Ingredientes" y "Precauciones" de cada ficha técnica para evitar reacciones alérgicas. Se aconseja imperativamente realizar una prueba de parche en un área reducida de la piel antes de la aplicación definitiva.</p>
+                    <p><strong>3. Políticas de Devolución, Garantías y Bioseguridad:</strong> Por motivos estrictos de bioseguridad, control higiénico y resguardo de la cadena de frío y pureza de los activos botánicos orgánicos, no se admitirán devoluciones de productos cosméticos cuyos empaques, envases o sellos de seguridad originales hayan sido abiertos, alterados, removidos o manipulados después de la entrega. La garantía cubre únicamente fallas o desperfectos comprobados de fábrica en los atomizadores, válvulas dosificadoras o defectos estructurales del contenedor de vidrio.</p>
+                    <p><strong>4. Seguridad de Datos, Privacidad Corporativa y Ley de Protección de la Persona:</strong> Wellness Spa Group garantiza que toda la información recolectada en el formulario de registro de cliente (nombres, identificaciones, correos y direcciones de envío) se almacena bajo estrictos protocolos informáticos de encriptación TLS y base de datos securizada. Sus datos serán tratados de forma confidencial con el único propósito de ejecutar la logística de facturación y entrega física, y jamás serán transferidos, comercializados o expuestos a terceros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER) DE LA TIENDA -->
+    <footer class="spa-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>WELLNESS SPA STORE</h3>
+                <p data-es="Línea exclusiva de distribución autorizada de alta cosmética holística y biotecnología celular." data-en="Exclusive authorized distribution line for high holistic cosmetics and cellular biotechnology.">Línea exclusiva de distribución autorizada de alta cosmética holística y biotecnología celular.</p>
+                <div class="secure-footer-badges container-top">
+                    <span>🛡️ SSL Encrypted Connection</span>
+                    <span>🛡️ Secure Payments</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 data-es="Nuestras Líneas" data-en="Our Lines">Nuestras Líneas</h4>
+                <ul>
+                    <li><a href="#seccion-ahava">AHAVA Holística</a></li>
+                    <li><a href="#seccion-ahava">AHAVA Teen Skincare</a></li>
+                    <li><a href="#seccion-bionoah">SPA BioNoah Colágeno</a></li>
+                    <li><a href="#seccion-bionoah">SPA BioNoah Trufa & Uchuva</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Wellness Spa Group | Wellness Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN DE WHATSAPP CON TEXTO DE ENTRADA EN TIENDA -->
+    <a href="https://wa.me." class="whatsapp-float" target="_blank" aria-label="WhatsApp Store Support">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path d="M16 2a13 13 0 0 0-11.4 19.2L3 29l8-2.1A13 13 0 1 0 16 2zm6.9 18.5c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.3.2-3.7-.8a12.8 12.8 0 0 1-5.3-4.7c-1-1.3-1.6-2.9-1.6-4.6 0-3.3 2.5-4 2.8-4 .3 0 .6 0 .8.1.3 0 .6-.1.9.6.3.8 1 2.5 1.1 2.7.1.2.1.4 0 .6-.1.2-.2.4-.4.6l-.6.7c-.2.2-.4.4-.1.8a5.4 5.4 0 0 0 3.3 3c.7.3 1.2.3 1.6.1.4-.2.9-.8 1.1-1.4.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/>
+        </svg>
+    </a>
+
+    <!-- Vinculación del JavaScript de Control Externo Independiente de la Tienda -->
+    <script src="js/store-index.js"></script>
+</body>
+</html>
+

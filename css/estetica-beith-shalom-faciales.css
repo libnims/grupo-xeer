@@ -1,0 +1,284 @@
+/* ==========================================================================
+   ESTÉTICA BEITH SHALOM - SECCIÓN FACIALES STYLES
+   ========================================================================== */
+
+.btn-back-editorial {
+    position: fixed; 
+    top: 30px;
+    left: 40px;
+    z-index: 100;
+    text-decoration: none;
+    font-family: var(--font-clean);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary-vino);
+    
+    /* Acabado premium: fondo nude muy traslúcido y bordes redondeados finos */
+    background-color: rgba(252, 239, 239, 0.85); 
+    backdrop-filter: blur(5px); 
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(107, 23, 36, 0.08);
+    box-shadow: 0 5px 15px rgba(107, 23, 36, 0.03);
+    
+    transition: var(--transition-smooth);
+}
+
+.btn-back-editorial span {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+/* Microinteracción: Desplazamiento sutil hacia la izquierda al pasar el cursor */
+.btn-back-editorial:hover {
+    background-color: var(--color-primary-vino);
+    color: var(--color-white);
+    border-color: var(--color-primary-vino);
+    box-shadow: 0 8px 20px rgba(107, 23, 36, 0.12);
+}
+
+.btn-back-editorial:hover span {
+    transform: translateX(-4px);
+}
+
+/* 1. HERO COMPACTO DE LA SECCIÓN */
+.faciales-hero {
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--color-bg-nude);
+    overflow: hidden;
+}
+
+.faciales-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.faciales-hero h1 {
+    color: var(--color-primary-vino);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.faciales-hero p {
+    color: var(--color-text-muted);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* 2. CONTENEDOR DE BLOQUES ALTERNADOS (Diseño Tipo Revista de Lujo) */
+.faciales-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.treatment-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    /* Anclaje perfecto para que el scroll-margin-top no corte el título al redirigir */
+    scroll-margin-top: 80px; 
+}
+
+/* Invierte la fila automáticamente para los bloques pares (2, 4, etc.) */
+.treatment-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.treatment-image-wrapper {
+    flex: 1;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(107, 23, 36, 0.04);
+}
+
+.treatment-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.treatment-row:hover .treatment-image-wrapper img {
+    transform: scale(1.03);
+}
+
+.treatment-info-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.treatment-info-wrapper h2 {
+    color: var(--color-primary-vino);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Línea sutil decorativa digna de una estética premium */
+.treatment-info-wrapper h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-secondary-oro);
+}
+
+.treatment-row:nth-child(even) .treatment-info-wrapper h2::after {
+    left: auto;
+    right: 0; /* Alínea la línea decorativa a la derecha en filas invertidas */
+}
+
+.treatment-info-wrapper p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.treatment-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.treatment-price {
+    font-family: var(--font-editorial);
+    font-size: 1.4rem;
+    color: var(--color-primary-vino);
+    font-weight: 500;
+}
+
+/* 3. MINI-GRID PARA LOS TEMAS COMPLEMENTARIOS DE MICROAGUJAS (DÚOS) */
+.duos-list {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(107, 23, 36, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.duo-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--color-text-dark);
+}
+
+.duo-name {
+    font-weight: 500;
+}
+
+.duo-price {
+    color: var(--color-primary-vino);
+    font-weight: 600;
+}
+
+/* 4. REJILLA MINIMALISTA PARA LOS 17 SERVICIOS DE GRAN VALOR (18.000 colones) */
+.value-menu-section {
+    background-color: rgba(107, 23, 36, 0.01);
+    padding: 100px 20px;
+    border-top: 1px solid rgba(107, 23, 36, 0.03);
+}
+
+.value-menu-grid {
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.value-menu-item {
+    background-color: var(--color-white);
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    border: 1px solid rgba(107, 23, 36, 0.03);
+    transition: var(--transition-smooth);
+}
+
+.value-menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(107, 23, 36, 0.04);
+}
+
+.value-menu-title {
+    font-family: var(--font-clean);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    line-height: 1.5;
+    
+    
+}
+
+.terapia {
+    width: 100%;
+    height:150px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+
+/* 5. RESPONSIVO PARA PANTALLAS MÓVILES */
+@media (max-width: 768px) {
+
+    .btn-back-editorial {
+        top: auto;
+        bottom: 30px; /* Lo bajamos a la esquina inferior izquierda en celulares */
+        left: 20px;   /* Es más natural para el dedo pulgar al navegar en móviles */
+        font-size: 0.75rem;
+        padding: 10px 18px;
+    }
+
+    .treatment-row, .treatment-row:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    .treatment-image-wrapper {
+        width: 100%;
+        height: 280px;
+    }
+    .treatment-info-wrapper h2::after {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+    .treatment-meta {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .faciales-hero h1 {
+        font-size: 2rem;
+    }
+}
+
+

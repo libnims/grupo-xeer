@@ -1,0 +1,139 @@
+/* BANNER */
+.page-banner {
+    background-color: var(--secondary-blue);
+    background-image: linear-gradient(rgba(11, 19, 43, 0.85), rgba(11, 19, 43, 0.85)), url('banner-talento.jpg'); /* Opcional tener una foto ejecutiva de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+    color: var(--white);
+    text-align: center;
+}
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.banner-content span {
+    font-family: var(--font-titles);
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.banner-content h1 {
+    font-family: var(--font-titles);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+.banner-content p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+/* CUADRÍCULA DE SERVICIOS */
+
+.talento-servicios {
+    background-color: var(--light-bg);
+}
+
+.grid-talento-completo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.talento-card-premium {
+    background-color: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.01);
+    border: 1px solid rgba(11, 19, 43, 0.04);
+    transition: var(--transition-smooth);
+}
+
+
+.card-icon-num {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8rem;
+}
+
+.card-icon-num i {
+    font-size: 2rem;
+    color: var(--secondary-blue);
+    transition: var(--transition-smooth);
+}
+
+.card-icon-num span {
+    font-family: var(--font-titles);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(212, 175, 55, 0.3); 
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.talento-card-premium h3 {
+    font-family: var(--font-titles);
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    min-height: 48px; 
+}
+
+.talento-card-premium p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Resaltados internos en negrita solicitados */
+.talento-card-premium p strong {
+    color: var(--secondary-blue);
+    font-weight: 600;
+}
+
+
+.talento-card-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(11, 19, 43, 0.06);
+    border-color: rgba(212, 175, 55, 0.2); 
+}
+
+.talento-card-premium:hover .card-icon-num i {
+    color: var(--accent-gold);
+}
+
+.talento-card-premium:hover .card-icon-num span {
+    color: var(--accent-gold);
+}
+
+/* LLAMADO A LA ACCIÓN (CTA) */
+.cta-inner {
+    background-color: var(--white);
+    padding: 4rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+    border: 1px solid rgba(11, 19, 43, 0.05);
+    max-width: 850px;
+    margin: 0 auto;
+}
+.cta-inner h3 {
+    font-family: var(--font-titles);
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+}
+.cta-inner p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}

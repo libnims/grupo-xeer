@@ -1,0 +1,102 @@
+/* ==========================================================================
+   BANNER DE ENCABEZADO ESPECÍFICO
+   ========================================================================== */
+.page-banner {
+    background-color: var(--primary-blue);
+    padding: 6rem 0;
+    color: var(--white);
+    text-align: center;
+}
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.banner-content span {
+    font-family: var(--font-titles);
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.banner-content h1 {
+    font-family: var(--font-titles);
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.banner-content p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   DISEÑO DE TARJETAS INMOBILIARIAS
+   ========================================================================== */
+.inmobiliaria-content {
+    background-color: var(--light-bg);
+}
+.grid-inmobiliaria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+.inmo-card {
+    background-color: var(--white);
+    padding: 3.5rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.01);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+.inmo-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: var(--transition-smooth);
+}
+.inmo-icon i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+}
+
+.inmo-icon svg {
+    width: 40px;
+    height: 40px;
+}
+.inmo-card h3 {
+    font-family: var(--font-titles);
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.2rem;
+}
+.inmo-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Interacción fluida de las tarjetas */
+.inmo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(11, 19, 43, 0.05);
+}
+.inmo-card:hover .inmo-icon {
+    background-color: var(--secondary-blue);
+}
+.inmo-card:hover .inmo-icon i {
+    color: var(--accent-gold);
+}
+
+.inmo-card:hover .inmo-icon svg {
+    color: var(--accent-gold);
+}
+

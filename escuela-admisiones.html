@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admisiones Ejecutivas | Escuela de Negocios XEER</title>
+    <link rel="stylesheet" href="css/escuela-general.css">
+    <link rel="stylesheet" href="css/escuela-admisiones.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-nav"><img src="img/logo-gxeer-fondo-blanco.PNG" alt="XEER"></div>
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-icono-hamburguesa">
+            <span class="linea-hamburguesa"></span><span class="linea-hamburguesa"></span><span class="linea-hamburguesa"></span>
+        </label>
+        <div class="menu-nav">
+            <a href="index.html">Holding</a>
+            <a href="escuela.html">LA ESCUELA</a>
+            <a href="escuela-programas.html">PROGRAMAS</a>
+            <a href="escuela-admisiones.html" class="active">ADMISIONES</a>
+        </div>
+    </nav>
+
+    <main class="contenedor-admisiones">
+        <!-- FORMULARIO DE POSTULACION -->
+        <section class="tarjeta-formulario-admision">
+            <h2>Postulación Académica</h2>
+            <p>Aplique ingresando sus datos para iniciar la evaluación de su perfil ejecutivo.</p>
+            <form action="https://formsubmit.co" method="POST">
+                <input type="hidden" name="_next" value="admisiones.html#modal-admision">
+                <input type="hidden" name="_subject" value="Nueva Postulación Escuela de Negocios XEER">
+                <input type="hidden" name="_captcha" value="false">
+
+                <input type="text" name="nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <input type="text" name="empresa" placeholder="Empresa / Emprendimiento" required>
+                
+                <select name="programa_interes" required class="select-luxe">
+                    <option value="" disabled selected>Seleccione el programa de interés...</option>
+                    <option value="mujer360">Mujer 360 "Emprende"</option>
+                    <option value="proyectat">Proyecta-T C.R.</option>
+                    <option value="mentes">Mentes de Alto Impacto</option>
+                </select>
+
+                <textarea name="mensaje" placeholder="Detalle sus objetivos profesionales al unirse a XEER..." rows="4" required></textarea>
+                <button type="submit" class="btn-enviar-admision">Enviar Postulación</button>
+            </form>
+        </section>
+
+        <!-- INFO DIRECTA Y REDES SOCIALES SOVRIAS DEL PDF -->
+        <section class="informacion-canales-admision">
+            <h2>Dirección de Admisiones</h2>
+            <div class="bloque-contacto-pdf">
+                <h5>Contacto Telefónico</h5>
+                <p>Móvil: 6217-6297 / 6039-7111</p>
+                <p>Oficinas: 2430-6908</p>
+            </div>
+            <div class="bloque-contacto-pdf">
+                <h5>Sede Oficial Costa Rica</h5>
+                <p>Alajuela, La Tropicana, contiguo a Óptica Colonial.</p>
+            </div>
+            
+            <!-- ENLACES DE REDES EN FORMATO PREMUM -->
+            <div class="bloque-redes-luxe">
+                <h5>Ecosistema Digital</h5>
+                <div class="links-redes">
+                    <a href="https://linkedin.com" target="_blank">LINKEDIN</a>
+                    <a href="https://facebook.com" target="_blank">FACEBOOK</a>
+                    <a href="mailto:info@grupoxeer.com">EMAIL</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- VENTANA MODAL DE CONFIRMACION CON CHECK EN CSS PURO -->
+    <div id="modal-admision" class="capa-modal-fondo">
+        <a href="#" class="cerrar-fuera-overlay"></a>
+        <div class="ventana-modal-contenido">
+            <a href="#" class="btn-cerrar-modal">&times;</a>
+            <div class="icono-exito-modal check-dorado"></div>
+            <h2>Postulación Recibida</h2>
+            <p class="subtitulo-modal">Su perfil ha ingresado al departamento de admisiones.</p>
+            <div class="linea-dorada-modal"></div>
+            <p class="descripcion-modal">Un asesor académico de la Escuela de Negocios XEER revisará sus requerimientos y se comunicará formalmente en un plazo máximo de 24 horas.</p>
+            <a href="#" class="btn-entendido">Entendido</a>
+        </div>
+    </div>
+
+    <footer class="footer-luxe">
+        <p>&copy; 2026 XEER | Soluciones prácticas y eficientes con responsabilidad y ética.</p>
+    </footer>
+
+</body>
+</html>

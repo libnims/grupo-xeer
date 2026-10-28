@@ -1,0 +1,235 @@
+/* PALETA OFICIAL DEL HOLDING */
+:root {
+    --azul-de-alta-densidad: #022137;
+    --azul-medianoche-profundo: #001124;
+    --dorado-noble: #C39A3C;
+    --blanco-cristalino: #FFFFFF;
+    --fuente-ejecutiva: 'Montserrat', sans-serif;
+}
+
+.portal-holding-fullscreen {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--azul-medianoche-profundo);
+    overflow: hidden;
+    position: relative;
+}
+
+.columna-interactiva {
+    position: relative;
+    height: 100%;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 45px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    border-right: 1px solid rgba(195, 154, 60, 0.12); 
+}
+
+.columna-interactiva:last-child {
+    border-right: none;
+}
+
+
+.portal-holding-fullscreen:hover .columna-interactiva:hover {
+    flex: 2.5; 
+}
+
+
+.imagen-paralaje-fondo {
+    position: absolute;
+    top: 0; left: 0; width: 110%; height: 100%; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: grayscale(0.8) contrast(1.1);
+    -webkit-filter: grayscale(0.8) contrast(1.1);
+    transform: scale(1.05) translateX(0);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.5s ease;
+}
+
+
+.c-spa .imagen-paralaje-fondo { 
+    background-image: url('../img/spa-rio-perlas.PNG'); 
+}
+
+.c-instituto .imagen-paralaje-fondo { 
+    background-image: url('../img/instituto-beith-shalom.png'); 
+}
+
+.c-estetica .imagen-paralaje-fondo { 
+    background-image: url('../img/estetica-beith-shalom-corta.png'); 
+}
+
+.c-store .imagen-paralaje-fondo { 
+    background-image: url('../img/productos.png'); 
+}
+
+.columna-interactiva:hover .imagen-paralaje-fondo {
+    filter: grayscale(0) contrast(1);
+    -webkit-filter: grayscale(0) contrast(1);
+    transform: scale(1) translateX(-15px); /* Movimiento lateral orgánico estilo YouTube */
+}
+
+
+.filtro-azul-fusion {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(2, 33, 55, 0.3) 10%, rgba(0, 17, 36, 0.95) 90%);
+    z-index: 2;
+    transition: background 0.5s ease;
+}
+
+.columna-interactiva:hover .filtro-azul-fusion {
+    background: linear-gradient(to bottom, rgba(2, 33, 55, 0.05) 0%, rgba(0, 11, 24, 0.98) 85%);
+}
+
+
+.bloque-contenido-luxe {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    transform: translateY(25px);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.columna-interactiva:hover .bloque-contenido-luxe {
+    transform: translateY(0);
+}
+
+.sigla-ejecutiva {
+    font-size: 0.7rem;
+    color: var(--dorado-noble);
+    font-weight: 700;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.bloque-contenido-luxe h2 {
+    font-family: var(--fuente-ejecutiva);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--blanco-cristalino);
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.sub-titulo-oro {
+    color: var(--dorado-noble);
+}
+
+.linea-oro-finisima {
+    width: 0px;
+    height: 1.5px;
+    background-color: var(--dorado-noble);
+    margin: 12px 0;
+    transition: width 0.5s ease;
+}
+
+.columna-interactiva:hover .linea-oro-finisima {
+    width: 50px;
+}
+
+/* El texto se desvanece de forma suave y limpia */
+.extracto-texto {
+    font-size: 0.88rem;
+    color: #A0AEC0;
+    line-height: 1.6;
+    max-width: 380px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+}
+
+.columna-interactiva:hover .extracto-texto {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón Minimalista de Enlace */
+.link-luxury-portal {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--dorado-noble);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s, color 0.2s ease;
+}
+
+.link-luxury-portal span {
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.columna-interactiva:hover .link-luxury-portal {
+    opacity: 1;
+}
+
+.link-luxury-portal:hover {
+    color: var(--blanco-cristalino);
+}
+
+.link-luxury-portal:hover span {
+    transform: translateX(5px); /* Pequeña animación en la flecha */
+}
+
+/* Retorno Flotante al inicio */
+.retorno-organigrama-general {
+    position: absolute;
+    top: 30px; left: 45px; z-index: 25;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+.retorno-organigrama-general:hover { opacity: 1; color: var(--dorado-noble); }
+
+
+@media (max-width: 768px) {
+    .portal-holding-fullscreen {
+        flex-direction: column;
+    }
+    
+    .columna-interactiva {
+        width: 100%;
+        height: 25%;
+        padding: 25px 30px;
+        border-right: none;
+        border-bottom: 1px solid rgba(195, 154, 60, 0.12);
+    }
+    
+    .portal-holding-fullscreen:hover .columna-interactiva:hover {
+        flex: 2.5; /* Expansión vertical táctil */
+    }
+    
+    .imagen-paralaje-fondo {
+        width: 100%;
+        height: 110%; /* Invertimos las dimensiones para el paralaje vertical en celulares */
+        filter: grayscale(0) contrast(1); /* En celulares se muestra a color directo para ahorrar procesador */
+    }
+    
+    .columna-interactiva:hover .imagen-paralaje-fondo {
+        transform: scale(1) translateY(-10px);
+    }
+    
+    .bloque-contenido-luxe { transform: translateY(0); }
+    .bloque-contenido-luxe h2 { font-size: 1.1rem; }
+    .extracto-texto { font-size: 0.8rem; }
+    .link-luxury-portal { margin-top: 10px; }
+    .retorno-organigrama-general { top: 15px; left: 20px; font-size: 0.7rem; }
+}

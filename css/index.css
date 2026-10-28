@@ -1,0 +1,457 @@
+:root {
+    --azul-profundo: #001124;
+    --azul-intermedio: #022137;
+    --dorado-premium: #C39A3C;
+    --dorado-brillante: #C59B27;
+    --blanco-cristal: rgba(255, 255, 255, 0.06);
+    --borde-cristal: rgba(255, 255, 255, 0.12);
+    --texto-blanco: #FFFFFF;
+    --teal-publicitario: #08686F;
+    --fuente-global: 'Montserrat', 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-global);
+}
+
+/*  BACKGROUND: Entorno cinematográfico de alta gama */
+.pantalla-organigrama {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #022137 0%, #001124 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px 0 20px;
+    overflow-x: hidden;
+    isolation: isolate;
+}
+
+/* Destello Superior Izquierdo */
+.pantalla-organigrama::before {
+    content: '';
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(195, 154, 60, 0.08) 0%, rgba(195, 154, 60, 0) 70%);
+    border-radius: 50%;
+    z-index: -1; 
+    pointer-events: none; 
+    filter: blur(40px); 
+}
+
+/* Destello Central Derecho */
+.pantalla-organigrama::after {
+    content: '';
+    position: fixed;
+    bottom: 15%;
+    right: -5%;
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, rgba(197, 155, 39, 0.06) 0%, rgba(197, 155, 39, 0) 75%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(50px);
+}
+
+/* Adornos de las esquinas SVG */
+.adorno-svg {
+    position: absolute;
+    width: 280px;  
+    height: 180px; 
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.sup-der { top: 0; right: 0; }
+.inf-izq { bottom: 0; left: 0; }
+
+/* Contenedor Principal */
+.organigrama-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+.main-logo-top {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    position: relative; 
+    display: inline-block;
+}
+
+.main-logo-top img {
+    height: 300px;
+    width: auto;
+    animation: 
+        girarLogo3D 8s 1 ease-out forwards,
+        brilloPreEstallido 8s 1 ease-out forwards;
+    transform-origin: center;
+}
+
+/* Fuegos artificiales */
+.main-logo-top::before,
+.main-logo-top::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: lluviaChispas 7s 1 ease-out forwards;
+}
+
+/* ANIMACIÓN DEL GIRO 3D */
+@keyframes girarLogo3D {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* ANIMACIÓN DEL BRILLO */
+@keyframes brilloPreEstallido {
+    0%, 70% {
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)) brightness(1);
+    }
+    80% {
+        filter: drop-shadow(0 0 30px var(--dorado-brillante, #ffcc00)) drop-shadow(0 0 60px var(--teal-publicitario, #ff5b00)) brightness(1.6);
+    }
+    85% {
+        filter: drop-shadow(0 0 40px var(--texto-blanco, #fff)) drop-shadow(0 0 70px var(--dorado-brillante, #ffcc00)) brightness(2);
+    }
+    100% {
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)) brightness(1);
+    }
+}
+
+/* ANIMACIÓN DE LAS CHISPAS EXPANSIVAS */
+@keyframes lluviaChispas {
+    0%, 82% { 
+        opacity: 0;
+        box-shadow: 
+            0 0 0 var(--texto-blanco, #fff), 0 0 0 var(--dorado-brillante, #ffcc00), 0 0 0 var(--teal-publicitario, #ff5b00),
+            0 0 0 var(---texto-blanco, #fff), 0 0 0 var(--dorado-brillante, #ffcc00), 0 0 0 var(--teal-publicitario, #ff5b00);
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 
+            
+            -80px -120px 2px var(--texto-blanco, #fff),   80px -140px 4px var(--dorado-brillante, #ffcc00),  10px -160px 3px var(--teal-publicitario, #ff5b00),
+            
+            -150px -40px 3px var(--dorado-brillante, #ffcc00), 140px -20px 2px var(--texto-blanco, #fff),    -130px 60px 4px var(--teal-publicitario, #ff5b00),
+            
+            -60px 130px 4px var(--dorado-brillante, #ffcc00),  70px 120px 2px var(--texto-blanco, #fff),     120px 80px 3px var(--teal-publicitario, #ff5b00),
+            
+            -110px -90px 2px var(--teal-publicitario, #ff5b00), 110px -100px 3px var(--dorado-brillante, #ffcc00), -20px 150px 2px var(--texto-blanco, #fff);
+    }
+}
+
+
+/* BLOQUE INTRODUCCIÓN: Acabado de cristal  */
+.introduction {
+    width: 100%;
+    max-width: 500px;
+    padding: 25px 35px;
+    background: rgba(2, 33, 55, 0.45);
+    border: 1px solid var(--borde-cristal);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    margin-bottom: 60px;
+}
+
+.grande { color: var(--texto-blanco); 
+    font-size: 2.2rem; 
+    font-weight: 700; 
+    letter-spacing: 2px; 
+    display: block;
+}
+
+.pequeño { 
+    color: var(--dorado-brillante); 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    letter-spacing: 2px; 
+}
+
+.divisor { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    gap: 12px; 
+    margin: 4px 0; 
+}
+
+.linea { 
+    border-bottom: 1px solid var(--dorado-premium); 
+    width: 35%; opacity: 0.7; 
+
+}
+.circulo { 
+    background-color: var(--dorado-brillante); 
+    border-radius: 50%; 
+    width: 6px; 
+    height: 6px; 
+}
+
+.holding { 
+    color: var(--texto-blanco); 
+    font-size: 0.85rem; 
+    letter-spacing: 4px; 
+    opacity: 0.8; 
+}
+
+/* TARJETAS PRINCIPALES: Estilo Cristal Metálico con Zoom 3D */
+.grid-empresas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 60px;
+    perspective: 1200px; 
+ }
+
+.enlace-tarjeta {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.tarjeta-empresa {
+    display: flex;
+    align-items: center;
+    padding: 22px 25px;
+    border-radius: 14px;
+    color: var(--texto-blanco);
+    background: var(--blanco-cristal);
+    border: 1px solid var(--borde-cristal);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.3s ease;
+}
+
+/* Variaciones de iluminación sutiles en los bordes de los cristales */
+.bg-verde { 
+    border-left: 4px solid #004d40; 
+}
+
+.bg-dorado { 
+    border-left: 4px solid var(--dorado-premium); 
+}
+
+/* Efecto Hover Premium Tridimensional en las Tarjetas */
+.tarjeta-empresa:hover {
+    transform: scale3d(1.05, 1.05, 1.05) rotateY(-4deg) rotateX(3deg);
+    border-color: var(--dorado-premium);
+    box-shadow: 0 20px 40px rgba(195, 154, 60, 0.15);
+}
+
+.icono-circular {
+    flex-shrink: 0;
+    background: rgba(2, 33, 55, 0.9);   
+    width: 60px;               
+    height: 60px;              
+    display: flex;
+    align-items: center;       
+    justify-content: center;    
+    border-radius: 50%;        
+    border: 2px solid var(--dorado-premium);
+    box-shadow: 0 0 15px rgba(195, 154, 60, 0.2);
+    overflow: hidden;          
+    position: relative;
+}
+
+.icono-circular img {
+    width: 100%;               
+    height: 100%;              
+    object-fit: cover;         
+    display: block;
+}
+
+.texto-tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    width: 100%;
+}
+
+.titulo-tarjeta { 
+    font-weight: 700; 
+    font-size: 1.05rem; 
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.subtitulo-tarjeta {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+
+.tarjeta-borde-dorado {
+    flex: 1 1 260px;
+    max-width: 320px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(195, 154, 60, 0.25);
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;   
+    gap: 15px;             
+    color: var(--texto-blanco);
+    transition: all 0.3s ease;
+}
+
+.tarjeta-borde-dorado:hover {
+    border-color: var(--dorado-brillante);
+    background: rgba(195, 154, 60, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.subtitulo-tarjeta-dorada {
+    color: var(--dorado-brillante);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* VALORES INFERIORES: Ajustados en tamaño y legibilidad */
+.valores-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.valor-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 700;
+    color: var(--texto-blanco);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.icono-valor {
+    display: block;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--dorado-premium);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    object-fit: cover; 
+    overflow: hidden;
+}
+
+.icono-valor img {
+    width: 100%;               
+    height: 100%;              
+    object-fit: cover;         
+    display: block;
+    
+}
+
+
+
+.separador-vertical { 
+    color: var(--dorado-premium); 
+    opacity: 0.5; 
+    font-weight: 300; 
+    font-size: 1.4rem; 
+}
+
+/* 7. FOOTER LUXURY CURVADO */
+.barra-footer {
+    width: 100%;
+    background: rgba(1, 18, 36, 0.9);
+    padding: 22px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 5;
+    border-top-left-radius: 60px;
+    border-top: 1px solid var(--dorado-premium);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
+}
+
+.footer-p1 { color: var(--texto-blanco); font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; }
+.footer-p2 { color: var(--dorado-brillante); font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; }
+
+/* OPTIMIZACIÓN RESPONSIVA MÓVIL */
+@media (max-width: 900px) {
+    .grid-empresas {
+        grid-template-columns: 1fr; /* Colapsa a una sola columna en pantallas medianas/celulares */
+        gap: 20px;
+    }
+    
+    .tarjeta-empresa {
+        max-width: 100%;
+    }
+
+    .tarjeta-empresa:hover {
+        transform: scale3d(1.02, 1.02, 1.02) rotateY(-2deg); /* Suaviza el efecto 3D en pantallas táctiles */
+    }
+
+    .valores-footer {
+        flex-direction: column; /* Apila los valores verticalmente en smartphones */
+        gap: 20px;
+    }
+
+    .separador-vertical {
+        display: none; /* Esconde las líneas divisorias en móviles */
+    }
+
+    .adorno-svg {
+        width: 180px; /* Achica los gráficos decorativos para que no tapen los textos */
+        height: 120px;
+    }
+
+    .introduction {
+        padding: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .grande { font-size: 1.7rem; }
+}

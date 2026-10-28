@@ -1,0 +1,190 @@
+/* VARIABLES GLOBALES */
+:root {
+    --azul-corporativo: #022137;
+    --azul-profundo: #002147;
+    --dorado-noble: #C39A3C;
+    --dorado-brillante: #C59B27;
+    --blanco-puro: #FFFFFF;
+    --gris-lujo: #F4F6F8;
+    --texto-oscuro: #1A2530;
+    --fuente-premium: 'Montserrat', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-premium);
+}
+
+body {
+    background-color: var(--blanco-puro);
+    color: var(--texto-oscuro);
+    overflow-x: hidden;
+}
+
+/* NAVBAR LUXURY STYLE */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--azul-corporativo);
+    border-bottom: 2px solid rgba(195, 154, 60, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-nav img {
+    height: 50px;
+}
+
+.menu-nav a {
+    color: var(--blanco-puro);
+    text-decoration: none;
+    margin-left: 35px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.menu-nav a:hover, .menu-nav a.active {
+    color: var(--dorado-noble);
+}
+
+/* FOOTER CORPORATIVO */
+.footer-luxe {
+    background-color: #01121F;
+    padding: 40px 8%;
+    border-top: 1px solid rgba(195, 154, 60, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+}
+
+.footer-luxe a {
+    color: var(--dorado-noble);
+    text-decoration: none;
+}
+
+@media(max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; text-align: center; }
+    .menu-nav a { margin: 0 10px; }
+    .footer-luxe { flex-direction: column; gap: 15px; text-align: center; }
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO MÓVIL Y MENÚ HAMBURGUESA INTEGRAL (SOLO CSS)
+   ========================================================================== */
+
+/* Ocultar el checkbox y el icono de hamburguesa por defecto en computadoras */
+.menu-checkbox {
+    display: none;
+}
+
+.menu-icono-hamburguesa {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 110;
+}
+
+.linea-hamburguesa {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--dorado-noble);
+    border-radius: 2px;
+    transition: transform 0.4s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* EFECTOS MÓVILES (PANTALLAS MEDIANAS Y PEQUEÑAS) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+        /* Alinea los elementos al centro verticalmente, pero nos permite usar márgenes */
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+        gap: 20px; /* Espacio de separación básico entre el botón y el logo */
+    }
+
+    /* Mostrar el icono de hamburguesa en celulares y forzar su posición a la izquierda */
+    .menu-icono-hamburguesa {
+        display: flex;
+        order: 1; /* Le dice al navegador que este es el PRIMER elemento visual */
+        margin-right: auto; /* Empuja magnéticamente al logotipo hacia la derecha */
+    }
+
+    /* Ajuste para el logotipo */
+    .logo-nav {
+        order: 2; /* Le dice al navegador que el logo va en SEGUNDO lugar (a la par del botón) */
+    }
+
+    .logo-nav img {
+        height: 40px; /* Reducimos un poco el logo en móviles para que no sature */
+    }
+
+    /* Transformación del menú tradicional en una cortina lujosa desplegable */
+    .menu-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Totalmente oculto a la derecha */
+        width: 75%;  /* Ocupa el 75% del ancho de la pantalla */
+        height: 100vh;
+        background-color: rgba(2, 33, 55, 0.98);
+        border-left: 1px solid rgba(195, 154, 60, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        z-index: 105;
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-nav a {
+        margin-left: 0; 
+        font-size: 1.2rem; 
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* ACCIÓN CSS: Cuando el checkbox está activado (Clickeado), despliega el menú */
+    .menu-checkbox:checked ~ .menu-nav {
+        right: 0; 
+    }
+
+    /* ANIMACIÓN DE LAS LÍNEAS PARA CONVERTIRSE EN "X" AL ABRIRSE */
+    .menu-checkbox:checked ~ .menu-icono-hamburguesa .linea-hamburguesa:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--dorado-brillante);
+    }
+
+    .menu-checkbox:checked ~ .menu-icono-hamburguesa .linea-hamburguesa:nth-child(2) {
+        opacity: 0; 
+    }
+
+    .menu-checkbox:checked ~ .menu-icono-hamburguesa .linea-hamburguesa:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--dorado-brillante);
+    }
+    
+    /* Prevenir desbordamientos de textos grandes en los pies de página */
+    .footer-luxe {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 30px 5%;
+    }
+}
+

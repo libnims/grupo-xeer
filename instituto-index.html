@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Instituto Profesional Beith Shalom | Estética, Salud y Bienestar</title>
+<meta name="description" content="Formá tu futuro en estética, salud y bienestar con respaldo académico internacional. Carreras profesionales, técnicas, certificaciones, cursos y talleres." />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="stylesheet" href="css/instituto-general.css" />
+<link rel="stylesheet" href="css/instituto-index.css" />
+</head>
+<body>
+
+<a href="#contenido-principal" class="enlace-saltar">Saltar al contenido principal</a>
+
+<!--NAVBAR-->
+<header class="navbar">
+  <div class="navbar__contenido">
+    <a href="#inicio" class="navbar__marca">
+      <img src="img/estetica-arbol-de-la-vida.png" alt="Instituto Profesional Beith Shalom" />
+      <span class="navbar__marca-texto">
+        <strong>Beith Shalom</strong>
+        <span data-es="Instituto Profesional" data-en="Professional Institute">Instituto Profesional</span>
+      </span>
+    </a>
+
+    <nav class="navbar__enlaces" id="navbar-enlaces" aria-label="Navegación principal">
+      <a href="xeer-wellness-group-index.html">Xeer Wellness Group</a>
+      <a href="#sobre-nosotros" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+      <a href="#carreras-profesionales" data-es="Carreras Profesionales" data-en="Professional Programs">Carreras Profesionales</a>
+      <a href="#carreras-tecnicas" data-es="Carreras Técnicas" data-en="Technical Programs">Carreras Técnicas</a>
+      <a href="#certificaciones" data-es="Certificaciones" data-en="Certifications">Certificaciones</a>
+      <a href="#cursos-talleres" data-es="Cursos y Talleres" data-en="Courses &amp; Workshops">Cursos y Talleres</a>
+      <a href="#matricula" class="boton boton--sobre-turquesa" data-es="Matrícula" data-en="Enrollment">Matrícula</a>
+    </nav>
+
+    <div class="navbar__acciones">
+      <div class="navbar__idioma" role="group" aria-label="Selector de idioma">
+        <button type="button" data-idioma="es" aria-pressed="true">ES</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-idioma="en" aria-pressed="false">EN</button>
+      </div>
+
+      <button type="button" class="boton-carrito" id="boton-abrir-carrito" aria-label="Ver carrito de matrícula">
+        🛒
+        <span class="boton-carrito__contador" id="contador-carrito" hidden>0</span>
+      </button>
+
+      <button type="button" id="boton-cuenta" class="boton boton--fantasma" style="color:#fff;border-color:#fff;" data-es="Mi cuenta" data-en="My account">Mi cuenta</button>
+
+      <button type="button" class="navbar__toggle-menu" id="boton-menu-movil" aria-expanded="false" aria-controls="navbar-enlaces" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido-principal">
+
+  <!--HERO -->
+  <section class="hero" id="inicio">
+    <img class="hero__fondo" src="img/instituto-estudiantes.png" alt="grupo de jóvenes estudiantes mirando una laptop" />
+    <div class="contenedor hero__contenido">
+      <span class="hero__insignia" data-es="Programas con respaldo internacional" data-en="Programs with international accreditation">Programas con respaldo internacional</span>
+      <h1 class="hero__titulo">
+        <span data-es="Formá tu futuro" data-en="Shape your future">Formá tu futuro</span>
+      </h1>
+      <p class="hero__subtitulo" data-es="Estética, salud y bienestar: carreras profesionales, técnicas, certificaciones y talleres con formación práctica y acreditación internacional." data-en="Aesthetics, health and wellness: professional and technical programs, certifications and workshops with hands-on training and international accreditation.">
+        Estética, salud y bienestar: carreras profesionales, técnicas, certificaciones y talleres con formación práctica y acreditación internacional.
+      </p>
+      <div class="hero__acciones">
+        <a href="#matricula" class="boton boton--sobre-turquesa" data-es="Matriculate hoy" data-en="Enroll today">Matriculate hoy</a>
+        <a href="#carreras-profesionales" class="boton boton--fantasma" style="color:#fff;border-color:#fff;" data-es="Ver oferta académica" data-en="See our programs">Ver oferta académica</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="seccion" id="sobre-nosotros">
+    <div class="contenedor sobre-nosotros__grid" data-revelar>
+      <div>
+        <h2 class="titular-seccion" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</h2>
+        <p style="margin-top:1rem;" data-es="Somos un centro de enseñanza enfocado en la excelencia académica, la atención personalizada y la formación práctica, brindando herramientas reales para la inserción en el mercado laboral en el área de la estética, salud y bienestar." data-en="We are a teaching center focused on academic excellence, personalized attention and hands-on training, giving real tools for entering the job market in aesthetics, health and wellness.">
+          Somos un centro de enseñanza enfocado en la excelencia académica, la atención personalizada y la formación práctica, brindando herramientas reales para la inserción en el mercado laboral en el área de la estética, salud y bienestar.
+        </p>
+        <p style="margin-top:1rem;" data-es="Nuestros programas cuentan con acreditaciones internacionales y respaldo académico que fortalecen tu perfil profesional, permitiéndote desarrollar habilidades actualizadas y competitivas." data-en="Our programs hold international accreditation and academic backing that strengthen your professional profile, helping you build up-to-date, competitive skills.">
+          Nuestros programas cuentan con acreditaciones internacionales y respaldo académico que fortalecen tu perfil profesional, permitiéndote desarrollar habilidades actualizadas y competitivas.
+        </p>
+        <div class="sobre-nosotros__lista">
+          <span data-es="🎓 Formación práctica" data-en="🎓 Hands-on training">🎓 Formación práctica</span>
+          <span data-es="🌍 Acreditación internacional" data-en="🌍 International accreditation">🌍 Acreditación internacional</span>
+        </div>
+      </div>
+      <img src="img/instructora.jpg" alt="Instructora aplicando un tratamiento facial a una estudiante" style="border-radius: var(--radio-borde); box-shadow: var(--sombra-media);" />
+    </div>
+
+    <div class="contenedor respaldo-academico" data-revelar>
+      <p class="respaldo-academico__titulo" data-es="Respaldo académico" data-en="Academic backing">Respaldo académico</p>
+      <div class="respaldo-academico__logos">
+        <img src="img/sello-saint-peters.png" alt="Saint Peter University, State of Florida, USA" />
+        <img src="img/sello-fecoprobe.png" alt="Fecoprobe" />
+        <img src="img/sello-xeer-global-quality-service.png" alt="Xeer Empresarial" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SLOGAN 1 -->
+  <section class="slogan">
+    <img class="slogan__fondo" src="img/carrera-que-soñas.jpg" alt="una estudiante con un gorro de graduación pensando acerca de su futuro" />
+    <p class="slogan__texto" data-es="Construí hoy la carrera que soñás" data-en="Build today the career you dream of">Construí hoy la carrera que soñás</p>
+  </section>
+
+  <!-- CARRERAS PROFESIONALES (por sede) -->
+  <section class="seccion" id="carreras-profesionales">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Carreras Profesionales" data-en="Professional Programs">Carreras Profesionales</h2>
+      </div>
+
+      <div class="selector-sedes" role="tablist" aria-label="Seleccionar sede" data-revelar>
+        <button type="button" role="tab" aria-selected="true" data-sede="central" data-es="Sede Central" data-en="Main Campus">Sede Central</button>
+        <button type="button" role="tab" aria-selected="false" data-sede="paraiso" data-es="Paraíso de Cartago" data-en="Paraíso, Cartago">Paraíso de Cartago</button>
+        <button type="button" role="tab" aria-selected="false" data-sede="guanacaste" data-es="Guanacaste (próximamente)" data-en="Guanacaste (coming soon)">Guanacaste (próximamente)</button>
+      </div>
+
+      <div class="grid-tarjetas" id="grid-carreras-profesionales" data-revelar>
+        <!-- Las tarjetas se generan por JS a partir de PROGRAMAS.carreras_profesionales según la sede activa -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRERAS TÉCNICAS -->
+  <section class="seccion seccion--hielo" id="carreras-tecnicas">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Carreras Técnicas" data-en="Technical Programs">Carreras Técnicas</h2>
+      </div>
+      <div class="grid-tarjetas" id="grid-carreras-tecnicas" data-revelar></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICACIONES -->
+  <section class="seccion" id="certificaciones">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
+      </div>
+      <div class="grid-tarjetas" id="grid-certificaciones" data-revelar></div>
+    </div>
+  </section>
+
+  <!-- SLOGAN 2 -->
+  <section class="slogan">
+    <img class="slogan__fondo" src="img/mañana-lideras.jpg" alt="grupo de profesionales levantando el dedo pulgar" />
+    <p class="slogan__texto" data-es="Hoy aprendés, mañana liderás" data-en="Learn today, lead tomorrow">Hoy aprendés, mañana liderás</p>
+  </section>
+
+  <!-- CURSOS Y TALLERES -->
+  <section class="seccion seccion--hielo" id="cursos-talleres">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Cursos y Talleres" data-en="Courses &amp; Workshops">Cursos y Talleres</h2>
+      </div>
+
+      <div class="grid-tarjetas" data-revelar>
+        <article class="tarjeta">
+          <h3 class="tarjeta__titulo" data-es="Faciales y Estéticos" data-en="Facial &amp; Aesthetic">Faciales y Estéticos</h3>
+          <p class="tarjeta__texto" data-es="10 talleres especializados en el cuidado y renovación de la piel." data-en="10 specialized workshops on skin care and renewal.">10 talleres especializados en el cuidado y renovación de la piel.</p>
+          <button type="button" class="boton boton--primario" data-abrir-grupo="faciales" data-es="Ver talleres" data-en="See workshops">Ver talleres</button>
+        </article>
+        <article class="tarjeta">
+          <h3 class="tarjeta__titulo" data-es="Corporales y Terapéuticos" data-en="Body &amp; Therapeutic">Corporales y Terapéuticos</h3>
+          <p class="tarjeta__texto" data-es="Técnicas manuales para el bienestar físico y la recuperación muscular." data-en="Manual techniques for physical wellness and muscle recovery.">Técnicas manuales para el bienestar físico y la recuperación muscular.</p>
+          <button type="button" class="boton boton--primario" data-abrir-grupo="corporales" data-es="Ver talleres" data-en="See workshops">Ver talleres</button>
+        </article>
+      </div>
+
+      <div class="grupo-talleres" id="grupo-faciales" data-revelar>
+        <div class="grupo-talleres__cabecera">
+          <h3 data-es="Faciales y Estéticos" data-en="Facial &amp; Aesthetic">Faciales y Estéticos</h3>
+        </div>
+        <div class="grid-tarjetas grupo-talleres__subgrid" id="grid-faciales"></div>
+      </div>
+
+      <div class="grupo-talleres" id="grupo-corporales" data-revelar>
+        <div class="grupo-talleres__cabecera">
+          <h3 data-es="Corporales y Terapéuticos" data-en="Body &amp; Therapeutic">Corporales y Terapéuticos</h3>
+        </div>
+        <div class="grid-tarjetas grupo-talleres__subgrid" id="grid-corporales"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANUNCIOS -->
+  <section class="seccion" id="anuncios">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Anuncios" data-en="Announcements">Anuncios</h2>
+        <p data-es="Fechas de matrícula, procesos de registro, pagos, eventos y feriados." data-en="Enrollment dates, registration processes, payments, events and holidays.">Fechas de matrícula, procesos de registro, pagos, eventos y feriados.</p>
+      </div>
+      <div class="grid-tarjetas" id="lista-anuncios" data-revelar></div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="seccion seccion--hielo" id="blog">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Blog" data-en="Blog">Blog</h2>
+        <p data-es="Opiniones, avances tecnológicos y novedades académicas de nuestro cuerpo docente." data-en="Opinions, technological advances and academic news from our faculty.">Opiniones, avances tecnológicos y novedades académicas de nuestro cuerpo docente.</p>
+      </div>
+      <div id="lista-blog" data-revelar style="display:flex; flex-direction:column; gap:1.5rem;"></div>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section class="seccion" id="eventos">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Eventos" data-en="Events">Eventos</h2>
+        <p data-es="Graduaciones, seminarios y actividades importantes del instituto." data-en="Graduations, seminars and important institute activities.">Graduaciones, seminarios y actividades importantes del instituto.</p>
+      </div>
+      <div class="grid-tarjetas" id="lista-eventos" data-revelar></div>
+    </div>
+  </section>
+
+  <!-- COMENTARIOS -->
+  <section class="seccion seccion--hielo" id="comentarios">
+    <div class="contenedor">
+      <div class="seccion-encabezado" data-revelar>
+        <h2 class="titular-seccion" data-es="Comentarios" data-en="Comments">Comentarios</h2>
+      </div>
+
+      <div id="lista-comentarios" data-revelar></div>
+
+      <button type="button" class="boton boton--primario" id="boton-abrir-comentario" style="margin-top:1.5rem;" data-es="Dejar un comentario" data-en="Leave a comment">Dejar un comentario</button>
+
+      <p class="campo-ayuda" style="margin-top:1rem; max-width: 60ch;" data-es="Los comentarios se publican una vez verificado su contenido, para asegurar que no transgredan nuestras políticas de comunidad." data-en="Comments are published once their content has been reviewed, to make sure they follow our community guidelines.">
+        Los comentarios se publican una vez verificado su contenido, para asegurar que no transgredan nuestras políticas de comunidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- ALIANZAS COMERCIALES (carrusel) -->
+  <section class="seccion" aria-label="Alianzas comerciales">
+    <div class="contenedor">
+      <div class="seccion-encabezado seccion-encabezado--centrado" data-revelar>
+        <h2 class="titular-seccion" data-es="Alianzas comerciales" data-en="Business partners">Alianzas comerciales</h2>
+      </div>
+    </div>
+    <div class="carrusel-alianzas" data-revelar>
+      <div class="carrusel-alianzas__pista" id="pista-alianzas">
+        <!-- JS duplica esta lista para el loop continuo -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ASIDE PUBLICITARIO
+       ========================================================= -->
+  <section class="seccion franja-publicidad" aria-label="Anuncios publicitarios de empresas asociadas">
+    <div class="contenedor">
+      <div class="seccion-encabezado seccion-encabezado--centrado" data-revelar>
+        <h2 class="titular-seccion" style="font-size: var(--tamano-h3);" data-es="Empresas amigas" data-en="Partner businesses">Empresas amigas</h2>
+      </div>
+      <div class="franja-publicidad__grid" id="lista-publicidad" data-revelar></div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MATRÍCULA (ancla del navbar) + formulario de contacto
+       ========================================================= -->
+  <section class="seccion seccion--turquesa" id="matricula" style="text-align:center;">
+    <div class="contenedor" data-revelar>
+      <h2 class="titular-seccion" data-es="Da el primer paso" data-en="Take the first step">Da el primer paso</h2>
+      <p style="margin: 1rem auto; opacity:.95;" data-es="Elegí tus cursos arriba y usá el carrito de matrícula, o escribinos directamente." data-en="Pick your courses above and use the enrollment cart, or write to us directly.">
+        Elegí tus cursos arriba y usá el carrito de matrícula, o escribinos directamente.
+      </p>
+      <div class="hero__acciones" style="justify-content:center;">
+        <a href="https://wa.me/50662176297" target="_blank" rel="noopener" class="boton boton--sobre-turquesa">WhatsApp: 6217-6297</a>
+        <a href="mailto:info@grupoxeer.com" class="boton boton--fantasma" style="color:#fff;border-color:#fff;">info@grupoxeer.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-label="Formulario de solicitud de información">
+    <div class="contenedor" style="max-width:640px;" data-revelar>
+      <div class="seccion-encabezado seccion-encabezado--centrado">
+        <h2 class="titular-seccion" data-es="Solicitá información" data-en="Request information">Solicitá información</h2>
+        <p data-es="Contanos qué programa te interesa y te contactamos a la brevedad." data-en="Tell us which program you're interested in and we'll get back to you shortly.">
+          Contanos qué programa te interesa y te contactamos a la brevedad.
+        </p>
+      </div>
+
+      <form id="formulario-contacto" novalidate>
+        <div class="campo">
+          <label for="contacto-nombre" data-es="Nombre completo" data-en="Full name">Nombre completo</label>
+          <input type="text" id="contacto-nombre" name="nombreCompleto" required />
+        </div>
+        <div class="campo">
+          <label for="contacto-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+          <input type="email" id="contacto-email" name="email" required />
+        </div>
+        <div class="campo">
+          <label for="contacto-telefono" data-es="Teléfono" data-en="Phone">Teléfono</label>
+          <input type="tel" id="contacto-telefono" name="telefono" />
+        </div>
+        <div class="campo">
+          <label for="contacto-programa" data-es="Programa de interés" data-en="Program of interest">Programa de interés</label>
+          <select id="contacto-programa" name="programaInteres" required></select>
+        </div>
+        <div class="campo">
+          <label for="contacto-mensaje" data-es="Mensaje (opcional)" data-en="Message (optional)">Mensaje (opcional)</label>
+          <textarea id="contacto-mensaje" name="mensaje" rows="3"></textarea>
+        </div>
+        <button type="submit" class="boton boton--primario" data-es="Solicitud de información" data-en="Request information">Solicitud de información</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="contenedor footer__grid">
+    <div class="footer__columna">
+      <h4 data-es="Instituto Profesional Beith Shalom" data-en="Beith Shalom Professional Institute">Instituto Profesional Beith Shalom</h4>
+      <p data-es="Formación práctica en estética, salud y bienestar con respaldo académico internacional." data-en="Hands-on training in aesthetics, health and wellness with international academic backing.">Formación práctica en estética, salud y bienestar con respaldo académico internacional.</p>
+    </div>
+    <div class="footer__columna">
+      <h4 data-es="Enlaces" data-en="Links">Enlaces</h4>
+      <a href="#sobre-nosotros" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+      <a href="#carreras-profesionales" data-es="Carreras Profesionales" data-en="Professional Programs">Carreras Profesionales</a>
+      <a href="#cursos-talleres" data-es="Cursos y Talleres" data-en="Courses &amp; Workshops">Cursos y Talleres</a>
+      <a href="#matricula" data-es="Matrícula" data-en="Enrollment">Matrícula</a>
+    </div>
+    <div class="footer__columna">
+      <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+      <a href="https://wa.me/50662176297" target="_blank" rel="noopener">WhatsApp: 6217-6297</a>
+      <a href="mailto:info@grupoxeer.com">info@grupoxeer.com</a>
+    </div>
+  </div>
+  <p class="footer__linea">© <span id="anio-actual"></span> Instituto Profesional Beith Shalom. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+</footer>
+
+<!-- =========================================================
+     MODAL GENÉRICO: detalle de programa / anuncio / blog / evento / empresa
+     Un solo contenedor reutilizado por JS según data-tipo-modal
+     ========================================================= -->
+<div class="modal-fondo" id="modal-generico" role="dialog" aria-modal="true" aria-labelledby="modal-generico-titulo">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <div id="modal-generico-contenido"><!-- JS inyecta el contenido según el tipo --></div>
+    <button type="button" class="boton boton--fantasma modal__cerrar-pie" data-cerrar-modal data-es="Cerrar" data-en="Close">Cerrar</button>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: carrito / matrícula
+     ========================================================= -->
+<div class="modal-fondo" id="modal-carrito" role="dialog" aria-modal="true" aria-labelledby="modal-carrito-titulo">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 id="modal-carrito-titulo" data-es="Tu carrito de matrícula" data-en="Your enrollment cart">Tu carrito de matrícula</h2>
+
+    <div id="aviso-tiempo-carrito" class="aviso-tiempo" hidden></div>
+
+    <div id="lista-carrito-items"><!-- JS --></div>
+
+    <div class="carrito-resumen" id="resumen-carrito" hidden>
+      <span data-es-tpl="Subtotal: {monto}" data-en-tpl="Subtotal: {monto}" id="carrito-subtotal"></span>
+      <span data-es-tpl="IVA (13%): {monto}" data-en-tpl="VAT (13%): {monto}" id="carrito-iva"></span>
+      <span class="carrito-resumen__total" id="carrito-total"></span>
+    </div>
+
+    <p id="carrito-vacio" data-es="Todavía no agregaste ningún curso." data-en="You haven't added any courses yet.">Todavía no agregaste ningún curso.</p>
+
+    <div class="ficha-programa__acciones">
+      <button type="button" class="boton boton--primario" id="boton-formalizar-matricula" data-es="Formalizar Matrícula" data-en="Complete enrollment">Formalizar Matrícula</button>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: elegir modalidad de matrícula
+     ========================================================= -->
+<div class="modal-fondo" id="modal-modalidad-matricula" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="¿Cómo querés matricularte?" data-en="How would you like to enroll?">¿Cómo querés matricularte?</h2>
+    <div style="display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem;">
+      <button type="button" class="boton boton--primario" id="boton-matricula-web" data-es="Matricularme en línea" data-en="Enroll online">Matricularme en línea</button>
+      <button type="button" class="boton boton--fantasma" id="boton-matricula-presencial" data-es="Matricularme presencialmente" data-en="Enroll in person">Matricularme presencialmente</button>
+      <a href="https://wa.me/50662176297" target="_blank" rel="noopener" class="boton boton--fantasma" data-es="Llamar / escribir al centro de atención" data-en="Call / message our support line">Llamar / escribir al centro de atención</a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: requiere cuenta (antes de formalizar en línea)
+     ========================================================= -->
+<div class="modal-fondo" id="modal-requiere-cuenta" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Creá tu cuenta o iniciá sesión" data-en="Create your account or sign in">Creá tu cuenta o iniciá sesión</h2>
+    <p data-es="Para formalizar tu matrícula necesitás una cuenta. Tenés 15 minutos para completarla y no perder tu cupo apartado." data-en="To complete your enrollment you need an account. You have 15 minutes to finish, so you don't lose your reserved spot.">
+      Para formalizar tu matrícula necesitás una cuenta. Tenés 15 minutos para completarla y no perder tu cupo apartado.
+    </p>
+    <div style="display:flex; gap:1rem; margin-top:1.5rem;">
+      <button type="button" class="boton boton--primario" id="boton-ir-registro" data-es="Crear usuario" data-en="Create account">Crear usuario</button>
+      <button type="button" class="boton boton--fantasma" id="boton-ir-login" data-es="Ya tengo cuenta" data-en="I already have an account">Ya tengo cuenta</button>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: registro
+     ========================================================= -->
+<div class="modal-fondo" id="modal-registro" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Crear usuario" data-en="Create account">Crear usuario</h2>
+    <form id="formulario-registro" novalidate>
+      <div class="campo">
+        <label for="registro-nombre" data-es="Nombre completo" data-en="Full name">Nombre completo</label>
+        <input type="text" id="registro-nombre" name="nombreCompleto" required />
+      </div>
+      <div class="campo">
+        <label for="registro-telefono" data-es="Teléfono" data-en="Phone">Teléfono</label>
+        <input type="tel" id="registro-telefono" name="telefono" required />
+      </div>
+      <div class="campo">
+        <label for="registro-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+        <input type="email" id="registro-email" name="email" required />
+      </div>
+      <div class="campo">
+        <label for="registro-provincia" data-es="Provincia" data-en="Province">Provincia</label>
+        <select id="registro-provincia" name="provinciaId" required></select>
+      </div>
+      <div class="campo">
+        <label for="registro-canton" data-es="Cantón" data-en="Canton">Cantón</label>
+        <select id="registro-canton" name="cantonId" required disabled></select>
+      </div>
+      <div class="campo">
+        <label for="registro-distrito" data-es="Distrito" data-en="District">Distrito</label>
+        <select id="registro-distrito" name="distritoId" required disabled></select>
+      </div>
+      <div class="campo">
+        <label for="registro-direccion" data-es="Dirección exacta" data-en="Exact address">Dirección exacta</label>
+        <textarea id="registro-direccion" name="direccionExacta" rows="2" required></textarea>
+      </div>
+      <div class="campo">
+        <label for="registro-password" data-es="Contraseña (mínimo 8 caracteres)" data-en="Password (minimum 8 characters)">Contraseña (mínimo 8 caracteres)</label>
+        <input type="password" id="registro-password" name="password" minlength="8" required />
+      </div>
+      <p class="mensaje-alerta mensaje-alerta--error" id="registro-error" hidden></p>
+      <div class="ficha-programa__acciones">
+        <button type="submit" class="boton boton--primario" data-es="Crear cuenta" data-en="Create account">Crear cuenta</button>
+        <button type="button" class="boton boton--fantasma" id="boton-registro-google" data-es="Registrarme con Google" data-en="Sign up with Google">Registrarme con Google</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: iniciar sesión
+     ========================================================= -->
+<div class="modal-fondo" id="modal-login" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Iniciar sesión" data-en="Sign in">Iniciar sesión</h2>
+    <form id="formulario-login" novalidate>
+      <div class="campo">
+        <label for="login-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+        <input type="email" id="login-email" name="email" required />
+      </div>
+      <div class="campo">
+        <label for="login-password" data-es="Contraseña" data-en="Password">Contraseña</label>
+        <input type="password" id="login-password" name="password" required />
+      </div>
+      <p class="mensaje-alerta mensaje-alerta--error" id="login-error" hidden></p>
+      <div class="ficha-programa__acciones">
+        <button type="submit" class="boton boton--primario" data-es="Iniciar sesión" data-en="Sign in">Iniciar sesión</button>
+        <button type="button" class="boton boton--fantasma" id="boton-login-google" data-es="Continuar con Google" data-en="Continue with Google">Continuar con Google</button>
+      </div>
+      <button type="button" class="boton boton--texto" id="boton-olvide-password" style="margin-top:1rem;" data-es="Olvidé mi contraseña" data-en="I forgot my password">Olvidé mi contraseña</button>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: recuperar contraseña
+     ========================================================= -->
+<div class="modal-fondo" id="modal-recuperar" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Recuperar contraseña" data-en="Recover password">Recuperar contraseña</h2>
+    <form id="formulario-recuperar" novalidate>
+      <div class="campo">
+        <label for="recuperar-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+        <input type="email" id="recuperar-email" name="email" required />
+      </div>
+      <p class="mensaje-alerta mensaje-alerta--exito" id="recuperar-exito" hidden></p>
+      <button type="submit" class="boton boton--primario" data-es="Enviar enlace de recuperación" data-en="Send recovery link">Enviar enlace de recuperación</button>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: formalizar matrícula en línea (pago)
+     ========================================================= -->
+<div class="modal-fondo" id="modal-formalizar" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Formalizar matrícula" data-en="Complete enrollment">Formalizar matrícula</h2>
+    <div id="aviso-tiempo-formalizar" class="aviso-tiempo" hidden></div>
+    <form id="formulario-formalizar" novalidate>
+      <div class="campo">
+        <label for="formalizar-id" data-es="Subí tu identificación vigente" data-en="Upload your valid ID">Subí tu identificación vigente</label>
+        <input type="file" id="formalizar-id" name="idDocumento" accept="image/*,.pdf" required />
+      </div>
+      <div class="campo">
+        <label for="formalizar-metodo" data-es="Método de pago" data-en="Payment method">Método de pago</label>
+        <select id="formalizar-metodo" name="metodoPago" required>
+          <option value="sinpe" data-es="Sinpe Móvil" data-en="Sinpe Móvil">Sinpe Móvil</option>
+          <option value="deposito" data-es="Depósito bancario" data-en="Bank deposit">Depósito bancario</option>
+          <option value="tarjeta" data-es="Tarjeta (próximamente)" data-en="Card (coming soon)" disabled>Tarjeta (próximamente)</option>
+        </select>
+      </div>
+      <p class="campo-ayuda" id="instrucciones-pago" data-es="Sinpe Móvil al 6217-6297 a nombre de Instituto Beith Shalom." data-en="Sinpe Móvil to 6217-6297, Instituto Beith Shalom.">Sinpe Móvil al 6217-6297 a nombre de Instituto Beith Shalom.</p>
+      <div class="campo">
+        <label for="formalizar-referencia" data-es="Número de comprobante / transacción" data-en="Transaction / receipt number">Número de comprobante / transacción</label>
+        <input type="text" id="formalizar-referencia" name="referenciaPago" required />
+      </div>
+      <div class="campo">
+        <label for="formalizar-mensaje" data-es="Comentario adicional (opcional)" data-en="Additional comment (optional)">Comentario adicional (opcional)</label>
+        <textarea id="formalizar-mensaje" name="mensajeAdicional" rows="2"></textarea>
+      </div>
+      <p class="mensaje-alerta mensaje-alerta--error" id="formalizar-error" hidden></p>
+      <button type="submit" class="boton boton--primario" data-es="Confirmar matrícula" data-en="Confirm enrollment">Confirmar matrícula</button>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: matrícula presencial / telefónica
+     ========================================================= -->
+<div class="modal-fondo" id="modal-presencial" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Formulario de matrícula" data-en="Enrollment form">Formulario de matrícula</h2>
+    <form id="formulario-presencial" novalidate>
+      <div class="campo">
+        <label for="presencial-nombre" data-es="Nombre completo" data-en="Full name">Nombre completo</label>
+        <input type="text" id="presencial-nombre" name="nombreCompleto" required />
+      </div>
+      <div class="campo">
+        <label for="presencial-telefono" data-es="Teléfono" data-en="Phone">Teléfono</label>
+        <input type="tel" id="presencial-telefono" name="telefono" required />
+      </div>
+      <div class="campo">
+        <label for="presencial-email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+        <input type="email" id="presencial-email" name="email" required />
+      </div>
+      <div class="campo">
+        <label for="presencial-cantidad" data-es="Cantidad de cupos de interés" data-en="Number of spots you're interested in">Cantidad de cupos de interés</label>
+        <input type="number" id="presencial-cantidad" name="cantidad" min="1" value="1" required />
+      </div>
+      <div class="campo">
+        <label for="presencial-mensaje" data-es="Comentario o mensaje adicional" data-en="Additional comment or message">Comentario o mensaje adicional</label>
+        <textarea id="presencial-mensaje" name="mensajeAdicional" rows="3"></textarea>
+      </div>
+      <p class="mensaje-alerta mensaje-alerta--exito" id="presencial-exito" hidden></p>
+      <button type="submit" class="boton boton--primario" data-es="Enviar solicitud" data-en="Send request">Enviar solicitud</button>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: notificación simple (choque de horario, cupo cerrado, etc.)
+     ========================================================= -->
+<div class="modal-fondo" id="modal-aviso" role="dialog" aria-modal="true">
+  <div class="modal" style="max-width:440px; text-align:center;">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 id="modal-aviso-titulo" data-es="Aviso" data-en="Notice">Aviso</h2>
+    <p id="modal-aviso-texto"></p>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: dejar comentario
+     ========================================================= -->
+<div class="modal-fondo" id="modal-comentario" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <h2 data-es="Dejar un comentario" data-en="Leave a comment">Dejar un comentario</h2>
+    <form id="formulario-comentario" novalidate>
+      <div class="campo">
+        <label for="comentario-texto" data-es="Tu comentario" data-en="Your comment">Tu comentario</label>
+        <textarea id="comentario-texto" name="texto" rows="4" required></textarea>
+      </div>
+      <div class="campo">
+        <label for="comentario-imagen" data-es="Imagen (opcional)" data-en="Image (optional)">Imagen (opcional)</label>
+        <input type="file" id="comentario-imagen" name="imagen" accept="image/*" />
+      </div>
+      <p class="campo-ayuda" data-es="Tu comentario será publicado una vez verificado su contenido y siempre que no transgreda nuestras políticas de comunidad." data-en="Your comment will be published once its content is reviewed and as long as it follows our community guidelines.">
+        Tu comentario será publicado una vez verificado su contenido y siempre que no transgreda nuestras políticas de comunidad.
+      </p>
+      <button type="submit" class="boton boton--primario" data-es="Publicar comentario" data-en="Post comment">Publicar comentario</button>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: estado de envío (spinner → check / X), reutilizable
+     ========================================================= -->
+<div class="modal-fondo" id="modal-estado-envio" role="dialog" aria-modal="true" aria-live="polite">
+  <div class="modal" style="max-width:400px;">
+    <button type="button" class="modal__cerrar" data-cerrar-modal aria-label="Cerrar">✕</button>
+    <div class="estado-envio">
+      <div class="estado-envio__icono" id="estado-envio-icono">
+        <div class="estado-envio__spinner" style="width:100%;height:100%;"></div>
+      </div>
+      <p class="estado-envio__titulo" id="estado-envio-titulo" data-es="Enviando tu solicitud…" data-en="Sending your request…">Enviando tu solicitud…</p>
+      <p id="estado-envio-texto"></p>
+      <button type="button" class="boton boton--primario" id="boton-reintentar-envio" hidden data-es="Intentar de nuevo" data-en="Try again">Intentar de nuevo</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/instituto-index.js" defer></script>
+</body>
+</html>

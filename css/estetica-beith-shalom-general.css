@@ -1,0 +1,100 @@
+/* ==========================================================================
+   ESTÉTICA BEITH SHALOM - DESIGN SYSTEM & GLOBAL STYLES
+   ========================================================================== */
+
+/* 1. CONFIGURACIÓN DE VARIABLES GLOBALES (Colores y Fuentes del PDF) */
+:root {
+    /* Paleta de Colores Oficial */
+    --color-primary-vino: #6B1724;    /* Guinda/Vino profundo de botones y H1 */
+    --color-secondary-oro: #D4AF37;  /* Oro sutil para detalles y acentos */
+    --color-bg-nude: #FCEFEF;        /* Rosa pastel/nude empolvado de fondo principal */
+    --color-text-dark: #2C2C2C;      /* Gris casi negro para máxima legibilidad */
+    --color-text-muted: #7E6E6E;    /* Tono apagado para textos secundarios */
+    --color-white: #FFFFFF;
+
+    /* Tipografías de Alta Gama (Equivalentes a las del catálogo) */
+    /* Usaremos 'Playfair Display' como la Serif editorial y 'Montserrat' como la Sans-Serif limpia */
+    --font-editorial: 'Playfair Display', 'Cinzel', serif;
+    --font-clean: 'Montserrat', 'Poppins', sans-serif;
+    
+    /* Transiciones fluidas de nivel Estética Premium */
+    --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 2. RESETS Y CONFIGURACIÓN BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-nude);
+    font-family: var(--font-clean);
+    color: var(--color-text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+h1, h2, h3, .font-serif-editorial {
+    font-family: var(--font-editorial);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* 4. COMPONENTES UNIVERSALES (Botones Tipo Píldora del PDF) */
+.btn-capsule {
+    display: inline-block;
+    font-family: var(--font-clean);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 50px; /* Acabado redondeado perfecto del catálogo */
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+/* Botón Guinda Principal */
+.btn-primary-vino {
+    background-color: var(--color-primary-vino);
+    color: var(--color-white);
+}
+
+.btn-primary-vino:hover {
+    background-color: transparent;
+    border-color: var(--color-primary-vino);
+    color: var(--color-primary-vino);
+    transform: translateY(-2px);
+}
+
+/* Redes Sociales (Únicos iconos permitidos) */
+.social-icon {
+    color: var(--color-primary-vino);
+    font-size: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+    color: var(--color-secondary-oro);
+    transform: scale(1.1);
+}
+
+/* 5. CONFIGURACIÓN BASE PARA ANIMACIONES POR SCROLL */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    visibility: hidden;
+}
+
+/* Esta clase la añadirá JavaScript dinámicamente cuando el elemento esté en pantalla */
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}

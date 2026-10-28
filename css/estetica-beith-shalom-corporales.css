@@ -1,0 +1,287 @@
+/* ==========================================================================
+   ESTÉTICA BEITH SHALOM - SECCIÓN CORPORALES STYLES
+   ========================================================================== */
+
+.btn-back-editorial {
+    position: fixed; 
+    top: 30px;
+    left: 40px;
+    z-index: 100;
+    text-decoration: none;
+    font-family: var(--font-clean);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary-vino);
+    
+    /* Acabado premium: fondo nude muy traslúcido y bordes redondeados finos */
+    background-color: rgba(252, 239, 239, 0.85); 
+    backdrop-filter: blur(5px); 
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(107, 23, 36, 0.08);
+    box-shadow: 0 5px 15px rgba(107, 23, 36, 0.03);
+    
+    transition: var(--transition-smooth);
+}
+
+/* 1. HERO COMPACTO CORPORAL */
+.corporales-hero {
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--color-bg-nude);
+    overflow: hidden;
+}
+
+.corporales-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.corporales-hero h1 {
+    color: var(--color-primary-vino);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.corporales-hero p {
+    color: var(--color-text-muted);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* 2. DISPOSICIÓN DE BLOQUES CORPORALES ALTERNADOS */
+.corporales-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.corp-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    scroll-margin-top: 80px; 
+}
+
+.corp-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.corp-image-wrapper {
+    flex: 1;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(107, 23, 36, 0.04);
+}
+
+.corp-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.corp-row:hover .corp-image-wrapper img {
+    transform: scale(1.03);
+}
+
+.corp-info-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.corp-info-wrapper h2 {
+    color: var(--color-primary-vino);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.corp-info-wrapper h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-secondary-oro);
+}
+
+.corp-row:nth-child(even) .corp-info-wrapper h2::after {
+    left: auto;
+    right: 0;
+}
+
+.corp-info-wrapper p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Lista de Viñetas Elegantes para los Beneficios Corporales */
+.corp-benefits-list {
+    margin-bottom: 25px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.corp-benefits-list li {
+    font-size: 0.85rem;
+    color: var(--color-text-dark);
+    font-weight: 400;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Reemplazamos los checks del PDF por un puntito de oro sutil en CSS */
+.corp-benefits-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary-oro);
+    font-size: 1.2rem;
+    top: -2px;
+}
+
+.corp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(107, 23, 36, 0.1);
+}
+
+.corp-price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.corp-price {
+    font-family: var(--font-editorial);
+    font-size: 1.3rem;
+    color: var(--color-primary-vino);
+    font-weight: 500;
+}
+
+.corp-package-price {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+/* 3. GRID SECUNDARIO PARA TERAPIAS REDUCTORAS Y DE SHOCK */
+.shock-menu-section {
+    background-color: rgba(107, 23, 36, 0.01);
+    padding: 100px 20px;
+    border-top: 1px solid rgba(107, 23, 36, 0.03);
+}
+
+.shock-menu-grid {
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.shock-card {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(107, 23, 36, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-smooth);
+}
+
+.shock-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(107, 23, 36, 0.04);
+}
+
+.shock-card-info {
+    padding: 25px;
+}
+
+.shock-card-title {
+    font-family: var(--font-editorial);
+    font-size: 1.3rem;
+    color: var(--color-primary-vino);
+    margin-bottom: 10px;
+}
+
+.shock-card-text {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.shock-card-footer {
+    background: rgba(107, 23, 36, 0.02);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(107, 23, 36, 0.02);
+}
+
+.terapia {
+    width: 100%;
+    height: 250px;
+}
+
+/* 4. RESPONSIVO MÓVIL */
+@media (max-width: 768px) {
+    .corp-row, .corp-row:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    .corp-image-wrapper {
+        width: 100%;
+        height: 280px;
+    }
+    .corp-info-wrapper h2::after {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+    .corp-benefits-list {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: left;
+    }
+    .corp-meta {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .corporales-hero h1 {
+        font-size: 2rem;
+    }
+}
+

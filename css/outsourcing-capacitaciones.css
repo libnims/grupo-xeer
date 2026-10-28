@@ -1,0 +1,177 @@
+/* ==========================================================================
+   DISEÑO CAPACITACIONES PREMIUM Y TRANSICIONES ELÁSTICAS
+   ========================================================================== */
+
+.capacitaciones-main {
+    background-color: var(--light-bg);
+}
+
+/* Encabezado Parallax Estilizado */
+.parallax-bg {
+    background-color: var(--primary-blue);
+    background-image: linear-gradient(rgba(11, 19, 43, 0.88), rgba(11, 19, 43, 0.88));
+    padding: 6rem 0;
+    color: var(--white);
+    text-align: center;
+}
+
+/* SISTEMA DE PESTAÑAS SELECCIONABLES (FILTROS DE ALTO NIVEL) */
+.filter-tabs-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    background-color: var(--white);
+    border: 1px solid rgba(11, 19, 43, 0.08);
+    padding: 0.8rem 1.6rem;
+    font-family: var(--font-titles);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-blue);
+    color: var(--accent-gold);
+    border-color: var(--primary-blue);
+    box-shadow: 0 5px 15px rgba(11, 19, 43, 0.1);
+}
+
+/* ARQUITECTURA DE LA GRILLA DE TEMAS */
+.grid-capacitaciones-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.cap-card-premium {
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity;
+}
+
+.cap-card-inner {
+    background-color: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+    border: 1px solid rgba(11, 19, 43, 0.03);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+    transition: var(--transition-smooth);
+}
+
+
+.cap-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(28, 37, 65, 0.02) 0%, rgba(11, 19, 43, 0.04) 100%);
+    z-index: -1;
+    transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.cap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cap-header i {
+    font-size: 2rem;
+    color: var(--secondary-blue);
+    transition: var(--transition-smooth);
+}
+
+.cap-header span {
+    font-family: var(--font-titles);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(212, 175, 55, 0.25);
+    transition: var(--transition-smooth);
+}
+
+.cap-card-inner h3 {
+    font-family: var(--font-titles);
+    font-size: 1.15rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.cap-card-inner p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* INTERACCIÓN HOVER ELÁSTICA (MOVIMIENTO WOW) */
+.cap-card-inner:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(11, 19, 43, 0.05);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.cap-card-inner:hover::before {
+    transform: translateY(-100%); /* Sube el gradiente elástico simulando líquido */
+}
+
+.cap-card-inner:hover .cap-header i, 
+.cap-card-inner:hover .cap-header span {
+    color: var(--accent-gold);
+}
+
+/* SECCIÓN INFERIOR MODALIDADES */
+.grid-modalidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.mod-item {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 4px;
+    text-align: center;
+    border-top: 3px solid var(--secondary-blue);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+}
+
+.mod-item i {
+    font-size: 2.2rem;
+    color: var(--accent-gold);
+    margin-right: 0;
+    margin-bottom: 1.2rem;
+}
+
+.mod-item h4 {
+    font-family: var(--font-titles);
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.mod-item p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}

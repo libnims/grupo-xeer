@@ -1,0 +1,193 @@
+.contenedor-contacto {
+    display: flex;
+    max-width: 1100px;
+    margin: 60px auto;
+    gap: 50px;
+    padding: 0 20px;
+}
+
+.tarjeta-formulario {
+    flex: 1.5;
+    background-color: var(--blanco-puro);
+    padding: 40px;
+    border: 1px solid rgba(195, 154, 60, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.tarjeta-formulario h2 {
+    color: var(--azul-profundo);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-formulario p {
+    color: #667584;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #D0D9E2;
+    border-radius: 4px;
+    background-color: var(--gris-lujo);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+
+input:focus, textarea:focus {
+    border-color: var(--dorado-noble);
+    background-color: var(--blanco-puro);
+}
+
+.btn-enviar {
+    background-color: var(--azul-corporativo);
+    color: var(--blanco-puro);
+    border: 1px solid var(--dorado-noble);
+    padding: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--dorado-noble);
+    color: var(--azul-corporativo);
+}
+
+/* Contenedor del círculo */
+.icono-exito-modal.check-dorado {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(195, 154, 60, 0.15); 
+}
+
+.icono-exito-modal.check-dorado::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--dorado-noble); 
+    opacity: 0;
+    transform: rotate(0deg);
+}
+
+.icono-exito-modal.check-dorado::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 24px;
+    border-right: 3px solid var(--dorado-noble);
+    border-bottom: 3px solid var(--dorado-noble);
+    transform: rotate(45deg) scale(0); 
+    margin-top: -4px; 
+    opacity: 0;
+}
+
+#modal-exito:target .icono-exito-modal.check-dorado::before {
+    animation: cargarLuzDorada 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+#modal-exito:target .icono-exito-modal.check-dorado::after {
+    animation: mostrarCheckSuave 0.4s ease-out 1.4s forwards;
+}
+
+/* Animación luz da un giro completo y cierra el círculo */
+@keyframes cargarLuzDorada {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    85% {
+        transform: rotate(360deg);
+        opacity: 1;
+        border-color: transparent;
+        border-top-color: var(--azul-corporativo);
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+        /* Al finalizar el giro, el borde se completa de forma sólida */
+        border-color: var(--dorado-noble);
+    }
+}
+
+/* Animación check se expande */
+@keyframes mostrarCheckSuave {
+    0% {
+        transform: rotate(45deg) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* COLUMNA DE DATOS */
+.informacion-directa {
+    flex: 1;
+    background-color: var(--azul-corporativo);
+    color: var(--blanco-puro);
+    padding: 40px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.informacion-directa h2 {
+    color: var(--dorado-noble);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
+
+.bloque-dato h5 {
+    color: var(--dorado-noble);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.bloque-dato p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+@media(max-width: 768px) {
+    .contenedor-contacto { 
+        flex-direction: column; 
+        margin: 30px auto; 
+    }
+
+    .informacion-directa {
+        text-align: center;
+    }
+}

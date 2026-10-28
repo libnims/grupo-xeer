@@ -1,0 +1,215 @@
+.page-banner {
+    background-color: var(--primary-blue);
+    padding: 6rem 0;
+    color: var(--white);
+    text-align: center;
+}
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.banner-content span {
+    font-family: var(--font-titles);
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.banner-content h1 {
+    font-family: var(--font-titles);
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.banner-content p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+
+.contacto-main {
+    background-color: var(--light-bg);
+}
+.grid-contacto-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Columna de info más delgada que el formulario */
+    gap: 5rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .grid-contacto-page {
+        grid-template-columns: 1fr; /* Colapsa a una columna en móviles o tablets */
+        gap: 3.5rem;
+    }
+}
+
+/* COLUMNA IZQUIERDA: BLOQUES DE INFORMACIÓN */
+.contacto-info-sidebar {
+    background-color: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.01);
+    border-top: 3px solid var(--primary-blue);
+}
+.info-block-item {
+    margin-bottom: 2.5rem;
+}
+.info-block-item:last-child {
+    margin-bottom: 0;
+}
+.info-block-item h3 {
+    font-family: var(--font-titles);
+    font-size: 1.15rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.info-block-item p {
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    font-size: 0.98rem;
+}
+.info-block-item i {
+    color: var(--accent-gold);
+    font-size: 1.25rem;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.address-text {
+    line-height: 1.6;
+}
+
+/* Botón de WhatsApp Premium Integrado en el Diseño */
+.btn-whatsapp-corp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-titles);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.btn-whatsapp-corp i {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-right: 10px;
+}
+.btn-whatsapp-corp:hover {
+    background-color: var(--primary-blue);
+    color: var(--accent-gold);
+}
+
+/* COLUMNA DERECHA: FORMULARIO AVANZADO CON CAMPOS FLOTANTES */
+.contacto-form-sidebar {
+    background-color: var(--white);
+    padding: 3.5rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+}
+
+@media (max-width: 576px) {
+    .contacto-form-sidebar {
+        padding: 2rem;
+    }
+}
+
+.form-row-twin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 576px) {
+    .form-row-twin {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.form-group-page {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+.page-minimal-form input, .page-minimal-form textarea {
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid #D1D5DB;
+    background: transparent;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+.page-minimal-form label {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+    pointer-events: none;
+}
+.page-minimal-form textarea ~ label {
+    top: 1.5rem;
+    transform: none;
+}
+
+/* Elevación de la etiqueta cuando se escribe  */
+.page-minimal-form input:focus ~ label,
+.page-minimal-form input:not(:placeholder-shown) ~ label,
+.page-minimal-form textarea:focus ~ label,
+.page-minimal-form textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+.page-minimal-form input:focus, .page-minimal-form textarea:focus {
+    border-bottom-color: var(--accent-gold);
+}
+
+/* DISEÑO EXCLUSIVO DEL MENÚ DESPLEGABLE  */
+.form-group-select {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.select-label {
+    font-family: var(--font-titles);
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-left: 58px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.form-group-select select {
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid #D1D5DB;
+    background-color: transparent;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.form-group-select select:focus {
+    border-bottom-color: var(--accent-gold);
+}

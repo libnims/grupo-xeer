@@ -1,0 +1,40 @@
+.contenedor-contacto-w { display: flex; max-width: 1100px; margin: 60px auto; gap: 50px; padding: 0 20px; }
+.tarjeta-formulario-w { flex: 1.5; background: var(--blanco-lino); padding: 40px; border: 1px solid var(--borde-cristal); border-radius: 12px; }
+.tarjeta-formulario-w h2 { color: var(--verde-profundo); font-size: 1.8rem; margin-bottom: 8px; }
+.tarjeta-formulario-w p { color: var(--texto-gris); margin-bottom: 30px; font-size: 0.95rem; }
+
+form { display: flex; flex-direction: column; gap: 20px; }
+input, textarea, .select-luxe-w { width: 100%; padding: 15px; border: 1px solid #D0D9E2; border-radius: 6px; background-color: var(--blanco-puro); font-size: 0.95rem; outline: none; }
+input:focus, textarea:focus, .select-luxe-w:focus { border-color: var(--verde-jade); }
+
+.btn-enviar-w { background-color: var(--verde-jade); color: var(--blanco-puro); border: 1px solid var(--dorado-satinado); padding: 15px; font-weight: 600; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; transition: all 0.3s ease; }
+.btn-enviar-w:hover { background-color: var(--dorado-satinado); color: var(--verde-profundo); }
+
+.info-canales-w { flex: 1; background-color: var(--verde-jade); padding: 40px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; gap: 35px; border: 1px solid rgba(195, 154, 60, 0.2); color: var(--blanco-puro); }
+.info-canales-w h2 { color: var(--dorado-satinado); font-size: 1.6rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px; }
+.bloque-w-dato h5 { color: var(--dorado-satinado); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.bloque-w-dato p { font-size: 1rem; opacity: 0.9; line-height: 1.5; }
+
+/* MODAL INTERACTIVO */
+.capa-modal-fondo { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 38, 31, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 200; display: flex; justify-content: center; align-items: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.cerrar-fuera-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.capa-modal-fondo:target { opacity: 1; pointer-events: auto; }
+
+.ventana-modal-contenido { background-color: var(--blanco-puro); max-width: 520px; width: 100%; padding: 50px 40px; border-radius: 12px; border: 1px solid var(--dorado-satinado); text-align: center; position: relative; z-index: 5; transform: scale(0.85); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.capa-modal-fondo:target .ventana-modal-contenido { transform: scale(1); }
+
+.icono-exito-modal.check-dorado { width: 55px; height: 55px; border: 2px solid var(--dorado-satinado); border-radius: 50%; margin: 0 auto 15px auto; position: relative; display: flex; align-items: center; justify-content: center; }
+.icono-exito-modal.check-dorado::after { content: ''; position: absolute; width: 10px; height: 22px; border-right: 3px solid var(--dorado-satinado); border-bottom: 3px solid var(--dorado-satinado); transform: rotate(45deg); margin-top: -4px; }
+
+.ventana-modal-contenido h2 { color: var(--verde-profundo); font-size: 1.8rem; margin-bottom: 6px; }
+.subtitulo-modal { color: var(--dorado-satinado); font-size: 0.95rem; font-weight: 600; margin-bottom: 20px; }
+.linea-dorada-modal { width: 45px; height: 2px; background-color: var(--dorado-satinado); margin: 0 auto 20px auto; }
+.descripcion-modal { color: #4A5568; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; }
+
+.btn-entendido { display: inline-block; background-color: var(--verde-jade); color: var(--blanco-puro); border: 1px solid var(--dorado-satinado); padding: 12px 35px; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+.btn-cerrar-modal { position: absolute; top: 15px; right: 20px; font-size: 2.2rem; color: #A0AEC0; text-decoration: none; line-height: 1; }
+
+@media (max-width: 768px) {
+    .contenedor-contacto-w { flex-direction: column; margin: 20px auto; }
+    .tarjeta-formulario-w { padding: 25px; }
+}

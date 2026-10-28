@@ -1,0 +1,197 @@
+/* ==========================================================================
+   DISEÑO EMPRENDIMIENTOS Y MICRO-INTERACCIONES MAGNÉTICAS
+   ========================================================================== */
+
+.emprende-main {
+    background-color: var(--light-bg);
+}
+
+.page-banner {
+    background-color: var(--primary-blue);
+    padding: 6rem 0;
+    color: var(--white);
+    text-align: center;
+}
+.banner-content { max-width: 800px; margin: 0 auto; }
+.banner-content span { font-family: var(--font-titles); color: var(--accent-gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; font-weight: 600; display: block; margin-bottom: 0.5rem; }
+.banner-content h1 { font-family: var(--font-titles); font-size: 2.6rem; font-weight: 700; margin-bottom: 1rem; }
+.banner-content p { font-size: 1.1rem; color: rgba(255,255,255,0.8); font-weight: 300; }
+
+/* REJILLA BLOQUE 1: SOPORTE PYME */
+.grid-pyme-support {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.pyme-card {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+    border: 1px solid rgba(11, 19, 43, 0.03);
+    transition: var(--transition-smooth);
+}
+
+.pyme-header {
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.pyme-header i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    transition: var(--transition-smooth);
+}
+
+.pyme-card h3 {
+    font-family: var(--font-titles);
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.pyme-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.pyme-card p strong {
+    color: var(--secondary-blue);
+    font-weight: 600;
+}
+
+/* Efecto Hover Magnético Bloque 1 */
+.pyme-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(11, 19, 43, 0.05);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.pyme-card:hover .pyme-header {
+    background-color: var(--primary-blue);
+}
+
+.pyme-card:hover .pyme-header i {
+    color: var(--accent-gold);
+    transform: rotate(15deg); /* Efecto rotación sutil solicitado */
+}
+
+/* REJILLA BLOQUE 2: PROGRAMAS ACADÉMICOS SOCIALES */
+.grid-programas-sociales {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 480px) {
+    .grid-programas-sociales {
+        grid-template-columns: 1fr;
+    }
+}
+
+.programa-social-card {
+    background-color: var(--white);
+    padding: 3.5rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.01);
+    border-top: 4px solid var(--secondary-blue);
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.prog-badge {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+    padding: 0.3rem 0.8rem;
+    font-family: var(--font-titles);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.programa-social-card h3 {
+    font-family: var(--font-titles);
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.programa-social-card p {
+    color: var(--text-dark);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.programa-social-card p strong {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Lista de especialidades técnicas del PDF */
+.prog-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--light-bg);
+}
+
+.prog-list li {
+    font-family: var(--font-titles);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-blue);
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.prog-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Pie de la tarjeta con avales académicos oficiales */
+.prog-foot {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    border-top: 1px solid var(--light-bg);
+    padding-top: 1rem;
+    font-style: italic;
+}
+
+/* Efecto Hover Bloque 2 */
+.programa-social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(11, 19, 43, 0.05);
+    border-top-color: var(--accent-gold); /* El borde superior cambia a oro fluidamente */
+}

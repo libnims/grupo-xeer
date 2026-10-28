@@ -1,0 +1,251 @@
+body {
+    
+    background-image: linear-gradient(rgba(2, 32, 66, 0.85), rgba(0, 7, 18, 0.9)), url('../img/fondo-escuela-contacto.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.contenedor-admisiones { 
+    display: flex; 
+    max-width: 1100px; 
+    margin: 60px auto; 
+    gap: 50px; 
+    padding: 0 20px; 
+    
+}
+.tarjeta-formulario-admision { 
+    flex: 1.5; 
+    background: rgba(0, 28, 61, 0.45); 
+    padding: 40px; 
+    border: 1px solid var(--borde-cristal); 
+    border-radius: 12px; 
+}
+.tarjeta-formulario-admision h2 { 
+    color: var(--blanco-puro); 
+    font-size: 1.8rem; 
+    margin-bottom: 8px; 
+}
+.tarjeta-formulario-admision p { 
+    color: var(--texto-suave); 
+    margin-bottom: 30px; 
+    font-size: 0.95rem; 
+}
+
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+input, textarea, .select-luxe {
+    width: 100%; 
+    padding: 15px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    border-radius: 6px;
+    background-color: rgba(0, 14, 33, 0.6); 
+    color: var(--blanco-puro); 
+    font-size: 0.95rem; 
+    outline: none;
+}
+input:focus, textarea:focus, .select-luxe:focus { 
+    border-color: var(--oro-viejo); 
+}
+
+.select-luxe option { 
+    background-color: var(--azul-oxford); 
+    color: var(--blanco-puro); 
+}
+
+.btn-enviar-admision {
+    background-color: var(--azul-oxford); 
+    color: var(--blanco-puro); 
+    border: 1px solid var(--oro-viejo);
+    padding: 15px; 
+    font-weight: 600; 
+    letter-spacing: 1px; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    transition: all 0.3s ease;
+}
+.btn-enviar-admision:hover { 
+    background-color: var(--oro-viejo); 
+    color: var(--azul-profundo); 
+}
+
+/* INFORMACION LADO DERECHO */
+.informacion-canales-admision { 
+    flex: 1; 
+    background-color: var(--azul-oxford); 
+    padding: 40px; border-radius: 12px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 35px; 
+    border: 1px solid rgba(179, 146, 71, 0.2); 
+}
+.informacion-canales-admision h2 { 
+    color: var(--oro-viejo); 
+    font-size: 1.6rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.08); 
+    padding-bottom: 15px; 
+}
+.bloque-contacto-pdf h5, .bloque-redes-luxe h5 { 
+    color: var(--oro-brillante); 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-bottom: 8px; 
+}
+.bloque-contacto-pdf p { 
+    font-size: 1rem; 
+    color: var(--blanco-marfil); 
+    opacity: 0.9; 
+    line-height: 1.5; 
+}
+
+.links-redes { 
+    display: flex; 
+    gap: 20px; 
+    margin-top: 5px; 
+}
+.links-redes a { 
+    color: var(--blanco-puro); 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+    border-bottom: 1px solid var(--oro-viejo); 
+    padding-bottom: 2px; 
+    transition: color 0.2s ease; 
+}
+.links-redes a:hover { 
+    color: var(--oro-brillante); 
+}
+
+/* ==========================================================================
+   INTERACTIVIDAD MODAL PREMIUN (CHECK DORADO CSS PURO)
+   ========================================================================== */
+.capa-modal-fondo { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: rgba(0, 14, 33, 0.85); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    z-index: 200; display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.4s ease; 
+}
+.cerrar-fuera-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+}
+.capa-modal-fondo:target { 
+    opacity: 1; 
+    pointer-events: auto; 
+}
+
+.ventana-modal-contenido { 
+    background-color: var(--blanco-puro); 
+    max-width: 520px; 
+    width: 100%; 
+    padding: 50px 40px; 
+    border-radius: 12px; 
+    border: 1px solid var(--oro-viejo); 
+    text-align: center; 
+    position: relative; 
+    z-index: 5; 
+    transform: scale(0.85); 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.capa-modal-fondo:target .ventana-modal-contenido { 
+    transform: scale(1); 
+}
+
+.icono-exito-modal.check-dorado { 
+    width: 55px; 
+    height: 55px; 
+    border: 2px solid var(--oro-viejo); 
+    border-radius: 50%; 
+    margin: 0 auto 15px auto; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.icono-exito-modal.check-dorado::after { 
+    content: ''; 
+    position: absolute; 
+    width: 10px; 
+    height: 22px; 
+    border-right: 3px solid var(--oro-viejo); 
+    border-bottom: 3px solid var(--oro-viejo); 
+    transform: rotate(45deg); 
+    margin-top: -4px; 
+}
+
+.ventana-modal-contenido h2 { 
+    color: var(--azul-profundo); 
+    font-size: 1.8rem; 
+    margin-bottom: 6px; 
+}
+.subtitulo-modal { 
+    color: var(--oro-viejo); 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    margin-bottom: 20px; 
+}
+.linea-dorada-modal { 
+    width: 45px; 
+    height: 2px; 
+    background-color: var(--oro-viejo); 
+    margin: 0 auto 20px auto; 
+}
+.descripcion-modal { 
+    color: #4A5568; 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+    margin-bottom: 30px; 
+}
+
+.btn-entendido { 
+    display: inline-block; 
+    background-color: var(--azul-oxford); 
+    color: var(--blanco-puro); 
+    border: 1px solid var(--oro-viejo); 
+    padding: 12px 35px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+}
+.btn-cerrar-modal { 
+    position: absolute; 
+    top: 15px; 
+    right: 20px; 
+    font-size: 2.2rem; 
+    color: #A0AEC0; 
+    text-decoration: none; 
+    line-height: 1; 
+}
+
+@media (max-width: 768px) {
+    .contenedor-admisiones { 
+        flex-direction: column; 
+        margin: 20px auto; 
+    }
+    .tarjeta-formulario-admision { 
+        padding: 25px; 
+    }
+}

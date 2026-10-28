@@ -1,0 +1,670 @@
+/* ==========================================================================
+   ESTÉTICA BEITH SHALOM - LANDING PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+   .btn-back-editorial {
+    position: fixed; 
+    top: 30px;
+    left: 40px;
+    z-index: 100;
+    text-decoration: none;
+    font-family: var(--font-clean);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary-vino);
+    
+    /* Acabado premium: fondo nude muy traslúcido y bordes redondeados finos */
+    background-color: rgba(252, 239, 239, 0.85); 
+    backdrop-filter: blur(5px); 
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(107, 23, 36, 0.08);
+    box-shadow: 0 5px 15px rgba(107, 23, 36, 0.03);
+    
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   1. SECCIÓN HERO 
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+/* Sombras Botánicas Orgánicas de Fondo */
+.botanical-shadow-bg {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 225px;
+    height: 225px;
+    background-image: url('../img/estetica-arbol-de-la-vida.png'); 
+    background-size: cover;
+    background-position: center;
+     
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Flor Ornamental en la Esquina Inferior Izquierda */
+.corner-flower {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 320px;
+    height: auto;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.corner-flower img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(5px 5px 15px rgba(107, 23, 36, 0.08));
+}
+
+/* Texto Vertical Invertido en Columna (Lateral Derecho) */
+.vertical-text-container {
+    position: absolute;
+    right: 40px;
+    bottom: 60px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.vertical-text-editorial {
+    font-family: var(--font-editorial);
+    color: var(--color-primary-vino);
+    font-size: 5rem;
+    font-weight: 300;
+    opacity: 0.12; /* Efecto marca de agua de alta costura */
+    white-space: nowrap;
+    /* Transforma el texto de abajo hacia arriba */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+/* Contenido Central de la Portada */
+.hero-center-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+}
+
+/* El Círculo Editorial para el Video */
+.editorial-circle-frame {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: 1px solid rgba(107, 23, 36, 0.15);
+    box-shadow: 0 20px 50px rgba(107, 23, 36, 0.08);
+    background-image: url('../img/estetica-rostro-modelo.PNG');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.editorial-circule-poster {
+    object-fit: cover; /* Fuerza a la imagen a rellenar el círculo sin deformarse */
+    object-position: center; /* La centra a la perfección */
+}
+
+.editorial-circle-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+/* Clase que aplica JavaScript para mostrar el video */
+.editorial-circle-video.is-playing {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Bloque de Textos e Identidad */
+.hero-brand-title {
+    color: var(--color-primary-vino);
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.hero-welcome-tag {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    color: var(--color-primary-vino);
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.hero-persuasive-text {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+
+/* ==========================================================================
+   2. SECCIÓN AUTORIDAD (Imágenes Editoriales Reemplazando Iconos)
+   ========================================================================== */
+.authority-section {
+    width: 100%;
+    padding: 120px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.authority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.authority-card {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Imagen Macro Reemplazo de Icono */
+.authority-macro-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.authority-macro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.authority-card:hover .authority-macro-image img {
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================================
+   3. ESCENARIO DEL CARRUSEL INTERACTIVO 3D (17 Servicios de Gran Valor)
+   ========================================================================== */
+.carousel-3d-stage {
+    width: 100%;
+    padding: 100px 0 140px 0;
+    overflow: hidden;
+    position: relative;
+    /* Crea el entorno de profundidad tridimensional */
+    perspective: 1200px; 
+}
+
+.carousel-3d-track {
+    position: relative;
+    width: 280px; /* Ancho de la tarjeta activa central */
+    height: 400px; /* Alto de la tarjeta */
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Estilo Universal de las Tarjetas del Carrusel */
+.card-3d {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 15px 35px rgba(107, 23, 36, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 24px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Imagen Editorial de Fondo de cada tarjeta */
+.card-3d-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.65); /* Oscurece sutilmente la foto para que el texto resalte */
+}
+
+/* Contenido Informativo dentro de la tarjeta */
+.card-3d-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+    transform: translateZ(30px); /* Hace que el texto flote físicamente fuera de la tarjeta en 3D */
+}
+
+.card-3d-title {
+    font-family: var(--font-editorial);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.card-3d-price {
+    font-size: 1.1rem;
+    color: var(--color-secondary-oro);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* CLASES DE ESTADO TRIDIMENSIONAL (Se aplicarán dinámicamente) */
+
+/* ==========================================================================
+   ACTUALIZACIÓN PREMIUM: MAYOR JERARQUÍA EN TARJETA CENTRAL
+   ========================================================================== */
+
+/* Tarjeta al Frente (Activa y ampliada) */
+.card-3d.is-active {
+    /* Combinamos un empuje en el eje Z de 220px y una escala de 1.12 para hacerla más grande */
+    transform: rotateY(0deg) translateZ(220px) scale(1.12); 
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+    /* Añadimos una sombra proyectada más profunda para denotar elevación real */
+    box-shadow: 0 30px 60px rgba(107, 23, 36, 0.15);
+    filter: brightness(1); /* Mantiene la foto central al 100% de luz */
+}
+
+/* Tarjeta Inclinada hacia la Izquierda (Fondo en perspectiva) */
+.card-3d.is-left {
+    transform: rotateY(45deg) translateZ(-80px) translateX(-260px) scale(0.9);
+    opacity: 0.35; /* Un poco más traslúcida para aumentar el contraste con la central */
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+    filter: brightness(0.5); /* Oscurece las tarjetas laterales para dar profundidad de sala de espera */
+}
+
+/* Tarjeta Inclinada hacia la Derecha (Fondo en perspectiva) */
+.card-3d.is-right {
+    transform: rotateY(-45deg) translateZ(-80px) translateX(260px) scale(0.9);
+    opacity: 0.35;
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+    filter: brightness(0.5);
+}
+
+/* Las otras 14 tarjetas ocultas en el fondo esperando su turno */
+.card-3d.is-hidden {
+    transform: rotateY(0deg) translateZ(-400px) scale(0.8);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ESTILIZACIÓN DE TESTIMONIOS Y FORMULARIO (100% Separado en CSS)
+   ========================================================================== */
+
+/* --- SECCIÓN TESTIMONIOS (Reviews) --- */
+.reviews-section {
+    padding: 120px 20px; /* Aumentado el padding para generar aire visual */
+    background: rgba(107, 23, 36, 0.02);
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-inner-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reviews-header {
+    margin-bottom: 60px;
+}
+
+.reviews-header h2 {
+    color: var(--color-primary-vino);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.reviews-header p {
+    color: var(--color-text-muted);
+    font-weight: 300;
+}
+
+.reviews-carousel-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 80px;
+}
+
+.reviews-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-slide {
+    position: absolute;
+    width: 100%;
+    max-width: 720px;
+    background: var(--color-white);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(107, 23, 36, 0.03);
+    border: 1px solid rgba(107, 23, 36, 0.02);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
+}
+
+.review-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.review-avatar-frame {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px auto;
+    border: 2px solid var(--color-bg-nude);
+    box-shadow: 0 5px 15px rgba(107, 23, 36, 0.08);
+}
+
+.review-avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-quote {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--color-primary-vino);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.review-author {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+}
+
+.review-treatment {
+    font-size: 0.8rem;
+    color: var(--color-secondary-oro);
+    font-weight: 400;
+}
+
+.review-arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgba(107, 23, 36, 0.18);
+    color: var(--color-primary-vino);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: var(--transition-smooth);
+}
+
+/* Estilización exclusiva para el vector SVG interno */
+.arrow-svg {
+    width: 40px;
+    height: 40px;
+    /* Al usar 'currentColor' en el HTML, el SVG hereda automáticamente el color del botón */
+    transition: var(--transition-smooth); 
+}
+
+.arrow-left { left: 0; }
+.arrow-right { right: 0; }
+
+/* Microinteracción premium al pasar el cursor */
+.review-arrow-btn:hover {
+    background-color: var(--color-primary-vino);
+    border-color: var(--color-primary-vino);
+    color: var(--color-white); /* Esto hace que el SVG pase a color blanco de golpe */
+    box-shadow: 0 8px 25px rgba(107, 23, 36, 0.15);
+}
+
+/* Efectos cinéticos de desplazamiento lateral sutil */
+.arrow-left:hover { transform: translateY(-50%) translateX(-4px); }
+.arrow-right:hover { transform: translateY(-50%) translateX(4px); }
+
+
+/* --- ADAPTACIÓN ERGONÓMICA RESPONSIVA MÓVIL --- */
+@media (max-width: 768px) {
+    .review-arrow-btn {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: inline-flex;
+        margin: 25px 15px 0 15px;
+    }
+    .arrow-left:hover, .arrow-right:hover { 
+        transform: scale(1.08); 
+    }
+}
+
+/* --- SECCIÓN FORMULARIO DE CONVERSIÓN --- */
+.form-conversion-section {
+    background-color: var(--color-primary-vino);
+    padding: 120px 20px; /* Incrementado para balancear con el carrusel de arriba */
+    position: relative;
+}
+
+
+.form-conversion-container {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.form-header {
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.form-header p {
+    font-weight: 300;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+.conversion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Campos de entrada estilizados */
+.form-input, .form-select {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-white);
+    font-family: var(--font-clean);
+    font-size: 0.9rem;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+/* Corrección de color de placeholder en inputs */
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Estilo interactivo al enfocar el campo */
+.form-input:focus, .form-select:focus {
+    border-color: var(--color-white);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* Forzar que las opciones del select tengan fondo negro para legibilidad */
+.form-select option {
+    color: #000000;
+    background-color: var(--color-white);
+}
+
+/* Botón de envío modificado en CSS */
+.btn-submit-form {
+    background-color: var(--color-white);
+    color: var(--color-primary-vino);
+    font-weight: 600;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit-form:hover {
+    background-color: transparent;
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.form-social-area {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-social-link {
+    color: var(--color-white);
+    opacity: 0.7;
+    font-size: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-social-link:hover {
+    color: var(--color-secondary-oro);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 768px) {
+    .reviews-section, .form-conversion-section {
+        padding: 80px 20px; /* Reducción proporcional en celulares */
+    }
+    .reviews-carousel-container {
+        padding: 0;
+        flex-direction: column;
+    }
+    .review-slide {
+        padding: 40px 20px;
+    }
+    .review-quote {
+        font-size: 1.1rem;
+    }
+    .reviews-wrapper {
+        min-height: 440px;
+    }
+    .review-arrow-btn {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: inline-flex;
+        margin: 20px 15px 0 15px;
+    }
+    .arrow-left:hover, .arrow-right:hover { 
+        transform: scale(1.05); 
+    }
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .editorial-circle-frame {
+        width: 260px;
+        height: 260px;
+    }
+    .hero-brand-title {
+        font-size: 2rem;
+    }
+    .vertical-text-container {
+        display: none; /* Se oculta en móviles para limpiar el espacio */
+    }
+    .corner-flower {
+        width: 180px;
+    }
+    .authority-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}

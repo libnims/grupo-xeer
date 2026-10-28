@@ -1,0 +1,318 @@
+.hero-escuela {
+    position: relative;
+    min-height: 65vh; 
+    background-image: linear-gradient(rgba(41, 85, 134, 0.85), rgba(0, 7, 18, 0.9)), url('../img/escuela-de-negocios.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px 40px 24px; 
+    box-sizing: border-box;
+}
+
+.hero-contenido-wow {
+    width: 100%;
+    max-width: 850px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+}
+
+.hero-contenido-wow h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem; 
+    font-weight: 800;
+    color: var(--blanco-puro);
+    letter-spacing: 1.5px;
+    line-height: 1.3; 
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
+}
+
+.badge-academico {
+    font-size: 0.8rem;
+    color: var(--oro-viejo);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-contenido-wow p {
+    font-size: 1.05rem;
+    color: var(--texto-suave);
+    max-width: 650px;
+    line-height: 1.6;
+    margin: 10px 0 0 0;
+    margin-bottom: 20px; 
+}
+
+.seccion-manifiesto-corporativo {
+    display: flex;
+    max-width: 1150px;
+    margin: 0 auto 60px auto; 
+    gap: 30px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+.tarjeta-manifiesto-cristal {
+    flex: 1;
+    position: relative;
+    background: rgba(0, 28, 61, 0.4); 
+    border: 1px solid var(--borde-cristal);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 45px 35px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contenido-manifiesto {
+    position: relative;
+    z-index: 5;
+}
+
+.categoria-manifiesto {
+    font-size: 0.75rem;
+    color: var(--oro-viejo);
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.tarjeta-manifiesto-cristal h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--blanco-puro);
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.tarjeta-manifiesto-cristal p {
+    font-size: 0.95rem;
+    color: #B4C6D8; 
+    line-height: 1.7;
+}
+
+.resaltado-convenio {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(179, 146, 71, 0.2);
+    color: var(--blanco-marfil) !important;
+}
+
+.resaltado-convenio strong {
+    color: var(--oro-brillante);
+    font-weight: 700;
+}
+
+/* --- FRANJA DE ACREDITACIONES --- */
+.franja-acreditaciones {
+    background-color: var(--azul-oxford);
+    padding: 60px 24px; 
+    text-align: center;
+    border-top: 1px solid rgba(179, 146, 71, 0.2);
+    border-bottom: 1px solid rgba(179, 146, 71, 0.2);
+    box-sizing: border-box;
+}
+
+.franja-acreditaciones h2 { 
+    font-size: 1.4rem; 
+    color: var(--blanco-puro); 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin-bottom: 45px; 
+}
+
+.grid-sellos { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;     
+    flex-wrap: wrap; 
+    gap: 40px; 
+    max-width: 1150px;       
+    margin: 0 auto;
+}
+
+.sello-item {
+    flex: 1 1 200px;         
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.sello-item img { 
+    width: auto;             
+    max-width: 160px;        
+    height: 200px;            
+    object-fit: contain;     
+}
+
+.sello-item p { 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    color: var(--oro-brillante); 
+    letter-spacing: 1px; 
+    margin: 0;
+}
+
+.seccion-recursos { 
+    padding: 80px 8%; 
+    text-align: center; 
+}
+
+.seccion-recursos h2, .seccion-faculty h2 { 
+    font-size: 2rem; 
+    color: var(--blanco-puro); 
+    margin-bottom: 50px; 
+    letter-spacing: 1px; 
+}
+
+.grid-recursos-wow { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 35px; 
+}
+
+.tarjeta-luxe-3d {
+    position: relative;
+    background: rgba(0, 28, 61, 0.45);
+    border: 1px solid var(--borde-cristal);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: left;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.destello-liquido {
+    position: absolute; 
+    top: 0; left: -150%; 
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(234, 209, 131, 0.12) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-30deg); z-index: 2;
+}
+
+.tarjeta-luxe-3d:hover {
+    transform: translateY(-5px) scale3d(1.02, 1.02, 1.02) rotateY(-3deg) rotateX(2deg);
+    border-color: var(--oro-viejo);
+    box-shadow: 0 15px 35px rgba(179, 146, 71, 0.15);
+}
+
+.tarjeta-luxe-3d:hover .destello-liquido { 
+    animation: pasarBrillo 0.8s ease forwards; 
+}
+
+@keyframes pasarBrillo { 
+    0% { left: -150%; } 
+    100% { left: 150%; } 
+}
+
+.tarjeta-luxe-3d h3 { 
+    color: var(--blanco-puro); 
+    font-size: 1.25rem; 
+    margin-bottom: 12px; 
+}
+
+.tarjeta-luxe-3d p { 
+    color: #A0AEC0; 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+}
+
+.seccion-faculty { 
+    padding: 40px 8% 80px 8%; 
+    background-color: rgba(0, 7, 18, 0.4); 
+    text-align: center; 
+}
+
+.grid-faculty { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 25px; 
+}
+
+.perfil-ejecutivo {
+    flex: 1 1 200px; max-width: 240px;
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid var(--oro-viejo);
+    padding: 20px; 
+    border-radius: 4px; 
+    text-align: center;
+    justify-content: center;
+}
+
+.perfil-ejecutivo:hover {
+    transform: translateY(-5px) scale3d(1.02, 1.02, 1.02) rotateY(-3deg) rotateX(2deg);
+    border-color: var(--oro-viejo);
+    box-shadow: 0 15px 35px rgba(179, 146, 71, 0.15); 
+}
+
+.perfil-ejecutivo img {
+    display: flex;
+    width: 150px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+}
+.perfil-ejecutivo h4 { 
+    color: var(--blanco-puro); 
+    font-size: 1rem; 
+    font-weight: 700; 
+    margin-bottom: 5px; 
+}
+
+.perfil-ejecutivo p { 
+    color: var(--oro-brillante); 
+    font-size: 0.8rem; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
+}
+
+@media (max-width: 768px) {
+    .hero-escuela {
+        padding: 40px 16px;
+    }
+    .hero-contenido-wow h1 {
+        font-size: 1.7rem; 
+        line-height: 1.4;
+    }
+    .hero-contenido-wow p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .seccion-manifiesto-corporativo {
+        flex-direction: column; 
+        margin: 20px auto 40px auto;
+        gap: 25px;
+    }
+    .tarjeta-manifiesto-cristal {
+        padding: 35px 25px;
+    }
+    .tarjeta-manifiesto-cristal h2 {
+        font-size: 1.4rem;
+    }
+}

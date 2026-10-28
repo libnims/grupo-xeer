@@ -1,0 +1,140 @@
+/* ==========================================================================
+   VENTANA MODAL (SOLO CSS)
+   ========================================================================== */
+
+.capa-modal-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 18, 36, 0.7); /* Azul oscuro translúcido */
+    backdrop-filter: blur(10px); /* Difumina de forma lujosa el fondo de la web */
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    /* Estado inicial: Oculto e invisible */
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.4s ease;
+}
+
+.cerrar-fuera-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    cursor: default;
+    z-index: 1;
+}
+
+.capa-modal-fondo:target {
+    opacity: 1;
+    pointer-events: auto; /* Permite clics e interacciones */
+}
+
+
+.ventana-modal-contenido {
+    background-color: var(--blanco-puro);
+    max-width: 540px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(195, 154, 60, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    z-index: 5; /* Queda por encima del enlace invisible de cierre */
+    
+    /* Animación de escala: El cuadro crece elegantemente al abrirse */
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capa-modal-fondo:target .ventana-modal-contenido {
+    transform: scale(1);
+}
+
+.icono-exito-modal {
+    font-size: 3rem;
+    color: var(--dorado-noble);
+    margin-bottom: 15px;
+    animation: flotarM 3s ease-in-out infinite;
+}
+
+.ventana-modal-contenido h2 {
+    color: var(--azul-profundo);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.subtitulo-modal {
+    color: var(--dorado-noble);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.linea-dorada-modal {
+    width: 50px;
+    height: 2px;
+    background-color: var(--dorado-noble);
+    margin: 0 auto 20px auto;
+}
+
+.descripcion-modal {
+    color: #556270;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn-entendido {
+    display: inline-block;
+    background-color: var(--azul-corporativo);
+    color: var(--blanco-puro);
+    border: 1px solid var(--dorado-noble);
+    padding: 12px 35px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-entendido:hover {
+    background-color: var(--dorado-noble);
+    color: var(--azul-corporativo);
+}
+
+
+.btn-cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.2rem;
+    color: #A0AEC0;
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-cerrar-modal:hover {
+    color: var(--azul-profundo);
+    transform: scale(1.1);
+}
+
+/* Animación de flotado para el logo central */
+@keyframes flotarM {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@media(max-width: 480px) {
+    .ventana-modal-contenido { padding: 40px 20px; }
+    .ventana-modal-contenido h2 { font-size: 1.6rem; }
+}
